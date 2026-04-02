@@ -316,22 +316,42 @@
 .eye-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; padding: 0; }
 .eye-btn svg { width: 20px; height: 20px; stroke: #303233; fill: none; stroke-width: 1.5; stroke-linecap: round; }
 .see-all-btn {
-  background: none; border: none; display: flex; align-items: center; gap: 4px; cursor: pointer;
-  font-size: 12px; font-weight: 900; color: var(--skin-accent, #EB2F96); line-height: 18px;
-}
-.see-all-btn:active { opacity: 0.6; }
-.see-all-btn svg { width: 20px; height: 20px; stroke: var(--skin-accent, #EB2F96); fill: none; stroke-width: 2; stroke-linecap: round; }
-@keyframes seeAllShake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-2px); }
-  40% { transform: translateX(2px); }
-  60% { transform: translateX(-2px); }
-  80% { transform: translateX(2px); }
+  position: relative;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(235,47,150,0.08);
+  border: 1px solid rgba(235,47,150,0.25);
+
+  animation: seeAllPulse 2s infinite;
 }
 
-.see-all-btn.attention {
-  animation: seeAllShake 0.6s ease;
+/* glow nhẹ */
+.see-all-btn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(235,47,150,0.35) 0%, transparent 70%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s;
 }
+
+.see-all-btn:hover::after {
+  opacity: 1;
+}
+
+@keyframes seeAllPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(235,47,150,0.25);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px 2px rgba(235,47,150,0.25);
+  }
+}
+  
 /* ── SELECT ROW ── */
 .select-row {
   display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch; gap: 8px;

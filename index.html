@@ -321,7 +321,17 @@
 }
 .see-all-btn:active { opacity: 0.6; }
 .see-all-btn svg { width: 20px; height: 20px; stroke: var(--skin-accent, #EB2F96); fill: none; stroke-width: 2; stroke-linecap: round; }
+@keyframes seeAllShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
 
+.see-all-btn.attention {
+  animation: seeAllShake 0.6s ease;
+}
 /* ── SELECT ROW ── */
 .select-row {
   display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch; gap: 8px;
@@ -1005,6 +1015,17 @@
 </div>
 </div><!-- /phone -->
 <script>
+  
+setTimeout(() => {
+  const btn = document.querySelector('.see-all-btn');
+  btn.classList.add('attention');
+
+  setTimeout(() => {
+    btn.classList.remove('attention');
+  }, 600);
+}, 1200);
+
+
 const DEFAULT_UNLOCKED_SKIN_IDS = ['momo_default'];
 
 const QUIZ_BY_SKIN_ID = {

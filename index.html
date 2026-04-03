@@ -560,6 +560,24 @@
   border-radius: 999px;
   margin: 0 auto 16px;
 }
+.skin-sheet-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 999px;
+  background: #F7F7F7;
+  color: #1f1f1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 133;
+  font-size: 18px;
+}
+
 
 @keyframes popupIn {
   from {
@@ -625,10 +643,10 @@
   border: 1px solid #EAEAEA;
   border-radius: 16px;
   background: #fff;
-  padding: 12px;
+  padding: 10px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-align: left;
 }
 .skin-item.is-unlocked {
@@ -661,7 +679,7 @@
 .skin-item-name {
   flex: 1;
   min-width: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #1f1f1f;
   line-height: 18px;
@@ -705,25 +723,63 @@
   color: #fff;
 }
 .skin-buy-btn {
-  min-height: 34px;
-  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 12px;
   border-radius: 10px;
-  background: #FFF3CD;
-  color: #92400E;
-  border: 1px solid #FCD34D;
+
   font-size: 12px;
   font-weight: 700;
+
+  color: #B42318;
+
+  background: #FFE4E6; /* pastel đỏ hồng */
+  border: 1px solid #FECDD3;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+
+  cursor: pointer;
+  transition: all 0.18s ease;
 }
 
+/* hover */
+.skin-buy-btn:hover {
+  background: #FECDD3;
+  transform: translateY(-1px);
+}
+
+/* active */
+.skin-buy-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) inset;
+}
+
+/* disabled */
 .skin-buy-btn:disabled {
-  opacity: 0.5;
+  background: #F3F4F6;
+  border-color: #E5E7EB;
+  color: #9CA3AF;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
-.skin-quiz-btn {
-  background: rgba(235,47,150,0.08);
-  color: var(--skin-accent, #EB2F96);
-  border: 1px solid rgba(235,47,150,0.18);
+/* icon xu */
+.skin-buy-btn .xu-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  background: #FDE68A; /* vàng pastel */
+  color: #92400E;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+  font-weight: 900;
 }
 
 /* barcode SVG bars */
@@ -1567,6 +1623,7 @@
   <div class="skin-sheet" id="skinSheet" onclick="if(event.target===this)closeSkinSheet()">
   <div class="skin-sheet-panel">
     <div class="skin-sheet-pill"></div>
+    <button class="skin-sheet-close" type="button" aria-label="Đóng" onclick="closeSkinSheet()">✕</button>
     <div class="skin-sheet-title">Chọn skin</div>
     <div class="skin-sheet-sub">Dùng Xu hoặc Thanh toán trả lời đúng câu hỏi</div>
     <div class="skin-list" id="skinList"></div>

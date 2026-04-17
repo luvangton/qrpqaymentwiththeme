@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px 0 48px;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'sans-serif';
   letter-spacing: -0.1px;
 }
 
@@ -151,8 +151,26 @@
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-.ip-skin-promo {
+
+.ip-skin-badge {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.32);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #fff;
+  white-space: nowrap;
+}
+.ip-skin-promo {
+  display: none;
   align-items: center;
   gap: 6px;
   width: 168px;
@@ -195,7 +213,7 @@
   gap: 6px;
   cursor: pointer;
 }
-.ip-skin-tag svg { width: 18px; height: 18px; }
+.ip-skin-tag svg { width: 12px; height: 12px; }
 
 @media (max-width: 375px) {
   .ip-skin-text,
@@ -318,7 +336,7 @@
   gap: 8px;
 }
 .account-info-label { display: flex; align-items: center; gap: 8px; }
-.acc-label-text { font-size: 14px; font-weight: 600; color: #303233; line-height: 18px; }
+.acc-label-text { font-size: 12px; font-weight: 600; color: #303233; line-height: 18px; }
 .eye-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; padding: 0; }
 .eye-btn svg { width: 20px; height: 20px; stroke: #303233; fill: none; stroke-width: 1.5; stroke-linecap: round; }
 .see-all-btn {
@@ -403,7 +421,7 @@
 .acc-icon-bank img { width: 16px; height: 16px; object-fit: contain; }
 .acc-name { font-size: 12px; font-weight: 600; color: #303233; line-height: 18px; white-space: nowrap; }
 .acc-amount { font-size: 12px; font-weight: 600; color: #303233; line-height: 18px; }
-.acc-sub { font-size: 12px; font-weight: 500; color: #727272; line-height: 14px; }
+.acc-sub { font-size: 10px; font-weight: 500; color: #727272; line-height: 14px; }
 
 /* ── PROMOTION CONTENT ── */
 .promo-content {
@@ -462,7 +480,7 @@
 .btab svg { width: 28px; height: 28px; }
 .btab-label { font-size: 10px; font-weight: 500; color: #727272; line-height: 14px; }
 .btab.active .btab-label { font-weight: 600; color: var(--skin-accent, #EB2F96); }
-.btab-badge { position: absolute; top: -8px; right: 50%; transform: translateX(24px); background: #F5222D; border: 1px solid #fff; border-radius: 16px; padding: 1px 4px; font-size: 10px; font-weight: 600; color: #fff; line-height: 14px; min-width: 16px; text-align: center; }
+.btab-badge { position: absolute; right: 50%; transform: translateX(24px); background: #F5222D; border: 1px solid #fff; border-radius: 16px; padding: 1px 4px; font-size: 10px; font-weight: 600; color: #fff; line-height: 14px; min-width: 16px; text-align: center; }
 .btab:active { opacity: 0.6; }
 .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 139px; height: 5px; background: #000; border-radius: 100px; opacity: 0.18; }
 
@@ -560,6 +578,7 @@
   border-radius: 999px;
   margin: 0 auto 16px;
 }
+
 .skin-sheet-close {
   position: absolute;
   top: 12px;
@@ -575,9 +594,11 @@
   justify-content: center;
   cursor: pointer;
   z-index: 133;
-  font-size: 18px;
 }
 
+.skin-sheet-close:active {
+  opacity: 0.72;
+}
 
 @keyframes popupIn {
   from {
@@ -601,7 +622,7 @@
 /* SUB = QUESTION - lớn nhất */
 .skin-sheet-sub {
   text-align: center;
-  font-size: 20px; /* 🔥 lớn nhất */
+  font-size: 24px; /* 🔥 lớn nhất */
   font-weight: 800;
   color: #1a1a1a;
   line-height: 1.4;
@@ -643,10 +664,10 @@
   border: 1px solid #EAEAEA;
   border-radius: 16px;
   background: #fff;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   text-align: left;
 }
 .skin-item.is-unlocked {
@@ -679,7 +700,7 @@
 .skin-item-name {
   flex: 1;
   min-width: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: #1f1f1f;
   line-height: 18px;
@@ -723,63 +744,25 @@
   color: #fff;
 }
 .skin-buy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 8px 12px;
+  min-height: 34px;
+  padding: 0 12px;
   border-radius: 10px;
-
+  background: #FFF3CD;
+  color: #92400E;
+  border: 1px solid #FCD34D;
   font-size: 12px;
   font-weight: 700;
-
-  color: #B42318;
-
-  background: #FFE4E6; /* pastel đỏ hồng */
-  border: 1px solid #FECDD3;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-
-  cursor: pointer;
-  transition: all 0.18s ease;
 }
 
-/* hover */
-.skin-buy-btn:hover {
-  background: #FECDD3;
-  transform: translateY(-1px);
-}
-
-/* active */
-.skin-buy-btn:active {
-  transform: scale(0.96);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08) inset;
-}
-
-/* disabled */
 .skin-buy-btn:disabled {
-  background: #F3F4F6;
-  border-color: #E5E7EB;
-  color: #9CA3AF;
+  opacity: 0.5;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
-/* icon xu */
-.skin-buy-btn .xu-icon {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-
-  background: #FDE68A; /* vàng pastel */
-  color: #92400E;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 9px;
-  font-weight: 900;
+.skin-quiz-btn {
+  background: rgba(235,47,150,0.08);
+  color: var(--skin-accent, #EB2F96);
+  border: 1px solid rgba(235,47,150,0.18);
 }
 
 /* barcode SVG bars */
@@ -1188,6 +1171,949 @@
   opacity: 0.82;
 }
 
+
+
+.receive-money-screen {
+  flex: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 120px),
+    #F4F3F7;
+}
+
+.receive-scroll {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 18px;
+  scrollbar-width: none;
+}
+
+.receive-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.receive-section {
+  padding: 12px 12px 0;
+}
+
+.receive-main-card {
+  background: #FFFFFF;
+  border-radius: 12px 12px 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(17,24,39,0.04);
+}
+
+.receive-section-head {
+  padding: 16px 14px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.receive-title,
+.receive-personal-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #2C2C2C;
+}
+
+.receive-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(235,47,150,0.08);
+  border: 1px solid rgba(235,47,150,0.16);
+  color: var(--skin-accent, #EB2F96);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.receive-title-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--skin-accent, #EB2F96);
+}
+
+.receive-hero {
+  margin: 0 10px 10px;
+  padding: 18px 14px 14px;
+  border-radius: 18px;
+  background: var(--receive-hero-bg, #F6DFEA);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+}
+
+.receive-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.receive-hero-copy {
+  min-width: 0;
+}
+
+.receive-user-name {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  color: #3A3340;
+}
+
+.receive-user-row {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #5F6472;
+}
+
+.receive-user-code {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.receive-eye-btn {
+  border: none;
+  background: none;
+  color: #6B7280;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.receive-eye-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.receive-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.65);
+  color: #5B5560;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.receive-status-chip svg {
+  width: 12px;
+  height: 12px;
+}
+
+.receive-qr-card {
+  margin: 16px auto 0;
+  width: 100%;
+  max-width: 426px;
+  background: #FFFFFF;
+  border-radius: 22px;
+  box-shadow: 0 12px 24px rgba(24, 24, 27, 0.08);
+  overflow: hidden;
+}
+
+.receive-qr-logos {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.receive-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.receive-logo.momo {
+  color: #D61F7B;
+  font-size: 15px;
+  text-align: center;
+}
+
+.receive-logo.vietqr {
+  color: #EF4444;
+  font-size: 18px;
+}
+
+.receive-logo.napas {
+  color: #2563EB;
+  font-size: 16px;
+}
+
+.receive-logo-divider {
+  width: 1px;
+  height: 20px;
+  background: #E5E7EB;
+}
+
+.receive-qr-wrap {
+  position: relative;
+  width: 276px;
+  height: 276px;
+  margin: 0 auto 16px;
+}
+
+.receive-qr-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.receive-avatar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.receive-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.receive-add-amount {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-top: 1px solid #ECECEC;
+  background: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1D8CFF;
+}
+
+.receive-actions {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.88);
+  border-radius: 14px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.receive-action-btn {
+  flex: 1;
+  min-height: 48px;
+  border: none;
+  background: none;
+  color: #383838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.receive-action-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.receive-action-divider {
+  width: 1px;
+  height: 28px;
+  background: #D8D8D8;
+}
+
+.receive-skin-strip {
+  margin-top: 12px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.receive-skin-all {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  background: #FFFFFF;
+  border: 1px solid #EBE7EF;
+  color: #D61F7B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(17,24,39,0.04);
+}
+
+.receive-skin-all.active {
+  border-color: rgba(235,47,150,0.35);
+  background: #FFF8FC;
+}
+
+.receive-skin-all svg {
+  width: 26px;
+  height: 26px;
+}
+
+.receive-skin-divider {
+  width: 1px;
+  height: 54px;
+  background: #DDD6E3;
+  flex-shrink: 0;
+}
+
+.receive-skin-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.receive-skin-list::-webkit-scrollbar {
+  display: none;
+}
+
+.receive-skin-thumb {
+  width: 86px;
+  height: 86px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(17,24,39,0.04);
+}
+
+.receive-skin-thumb.active {
+  border-color: var(--skin-accent, #EB2F96);
+  box-shadow: 0 0 0 2px rgba(235,47,150,0.08);
+}
+
+.receive-skin-thumb.is-locked {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.receive-skin-thumb-fill {
+  position: absolute;
+  inset: 0;
+}
+
+.receive-skin-thumb-check,
+.receive-skin-thumb-lock {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.receive-skin-thumb-check {
+  background: var(--skin-accent, #EB2F96);
+}
+
+.receive-skin-thumb-lock {
+  background: rgba(17,24,39,0.7);
+}
+
+.receive-secondary-card {
+  margin: 12px 12px 0;
+  border-radius: 16px;
+  padding: 8px;
+  background: var(--skin-second-card-bg, rgba(255,255,255,0.12));
+  border: 1px solid var(--skin-second-card-border, rgba(255,255,255,0.25));
+  backdrop-filter: blur(10px);
+}
+
+.receive-entrypoint {
+  margin-top: 8px;
+}
+
+.receive-inline-grid {
+  margin: 12px 12px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.receive-inline-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 14px 12px;
+  box-shadow: 0 8px 16px rgba(17,24,39,0.04);
+}
+
+.receive-inline-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #6B7280;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.receive-inline-value {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1F2937;
+  line-height: 1.35;
+}
+
+.receive-inline-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #6B7280;
+}
+
+.receive-personal-section {
+  margin-top: 18px;
+  padding: 0 12px;
+}
+
+.receive-banner-card {
+  margin-top: 12px;
+  min-height: 148px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #FBE4EE 0%, #F8DCE8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 18px 18px 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(17,24,39,0.04);
+}
+
+.receive-banner-copy {
+  max-width: 180px;
+}
+
+.receive-banner-head {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.05;
+  color: #111111;
+}
+
+.receive-banner-sub {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #5B5560;
+}
+
+.receive-banner-art {
+  width: 120px;
+  height: 120px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,0.8), rgba(255,255,255,0) 38%),
+    linear-gradient(135deg, #F7B7D0 0%, #F3D27D 100%);
+}
+
+.receive-tip-card {
+  margin-top: 12px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 14px 14px 16px;
+  box-shadow: 0 8px 16px rgba(17,24,39,0.04);
+}
+
+.receive-tip-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.receive-tip-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1F2937;
+}
+
+.receive-tip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.1);
+  color: #15803D;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.receive-tip-text {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #6B7280;
+}
+
+.receive-tip-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.receive-tip-btn {
+  flex: 1;
+  min-height: 38px;
+  border-radius: 12px;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.receive-tip-btn.primary {
+  background: var(--skin-btn-bg, #FDEAF4);
+  color: var(--skin-accent, #EB2F96);
+}
+
+.receive-tip-btn.secondary {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+.btab {
+  color: #727272;
+}
+
+.btab.active {
+  color: var(--skin-accent, #EB2F96);
+}
+
+.btab svg {
+  stroke: currentColor;
+}
+
+
+
+/* compact receive-money layout aligned with QR Payment */
+.receive-money-screen {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 12px 12px;
+  background: transparent;
+}
+
+.receive-money-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.receive-scroll {
+  height: auto;
+  overflow: visible;
+  padding-bottom: 0;
+}
+
+.receive-section {
+  padding: 0;
+}
+
+.receive-main-card {
+  background: #FFFFFF;
+  border-radius: 12px 12px 16px 16px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.receive-section-head {
+  padding: 12px 12px 10px;
+  min-height: 44px;
+}
+
+.receive-title {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.receive-title-badge {
+  min-height: 24px;
+  padding: 0 8px;
+  font-size: 10px;
+}
+
+.receive-hero {
+  margin: 0 12px 12px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.receive-hero-top {
+  align-items: center;
+}
+
+.receive-user-name {
+  font-size: 16px;
+}
+
+.receive-user-code {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.receive-status-chip {
+  min-height: 24px;
+  padding: 0 8px;
+  font-size: 10px;
+}
+
+.receive-qr-card {
+  margin-top: 12px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(24, 24, 27, 0.06);
+}
+
+.receive-qr-logos {
+  height: 48px;
+  gap: 8px;
+}
+
+.receive-logo.momo {
+  font-size: 13px;
+}
+
+.receive-logo.vietqr {
+  font-size: 16px;
+}
+
+.receive-logo.napas {
+  font-size: 14px;
+}
+
+.receive-qr-wrap {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 12px;
+}
+
+.receive-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.receive-add-amount {
+  height: 56px;
+  font-size: 16px;
+}
+
+.receive-actions {
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.receive-action-btn {
+  min-height: 42px;
+  font-size: 12px;
+}
+
+.receive-skin-strip {
+  margin-top: 12px;
+  padding: 0;
+  display: block;
+}
+
+.receive-skin-all {
+  display: none;
+}
+
+.receive-skin-divider {
+  display: none;
+}
+
+.receive-skin-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 12px 2px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.receive-skin-list::-webkit-scrollbar {
+  display: none;
+}
+
+.receive-skin-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+}
+
+.receive-skin-thumb-check,
+.receive-skin-thumb-lock {
+  width: 16px;
+  height: 16px;
+  right: 5px;
+  top: 5px;
+  font-size: 10px;
+}
+
+.receive-secondary-card {
+  margin: 12px 0 0;
+}
+
+.receive-inline-grid {
+  margin: 12px 0 0;
+  grid-template-columns: 1fr;
+}
+
+.receive-personal-section {
+  margin-top: 12px;
+}
+
+.receive-personal-title {
+  padding: 0;
+  font-size: 16px;
+}
+
+.receive-banner-card {
+  margin: 12px 0 0;
+  min-height: 116px;
+  border-radius: 18px;
+  padding: 14px 14px 14px 16px;
+}
+
+.receive-banner-head {
+  font-size: 20px;
+}
+
+.receive-banner-sub {
+  font-size: 13px;
+}
+
+.receive-banner-art {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+}
+
+.receive-tip-card {
+  margin-top: 10px;
+}
+
+.receive-inline-card {
+  padding: 12px;
+}
+
+
+.stack-progress-card {
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(235,47,150,0.12);
+  background: rgba(235,47,150,0.06);
+}
+
+.stack-progress-title {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.35;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+.btab-badge-star {
+  min-width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 999px;
+  background: #F5222D;
+  border-color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(250, 204, 21, 0.35);
+}
+
+.btab-badge-star svg {
+  width: 10px;
+  height: 10px;
+  fill: #fff;
+  stroke: none;
+}
+
+.stack-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stack-progress-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.stack-progress-count {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--skin-primary, #A60064);
+}
+
+.stack-progress-title {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #111827;
+}
+
+.stack-progress-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.stack-progress-bar {
+  position: relative;
+  margin-top: 14px;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(17,24,39,0.08);
+}
+
+.stack-progress-fill {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--skin-primary, #A60064) 0%, var(--skin-accent, #EB2F96) 100%);
+  box-shadow: 0 0 16px rgba(235,47,150,0.36);
+  transition: width 0.5s cubic-bezier(.22,.8,.32,1);
+}
+
+.stack-progress-markers {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stack-progress-marker {
+  min-height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #9ca3af;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.stack-progress-marker.active {
+  color: #fff;
+  background: var(--skin-primary, #A60064);
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+.stack-progress-marker.done {
+  color: var(--skin-primary, #A60064);
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(235,47,150,0.18);
+}
+
+.quiz-result-screen.skin-success .stack-progress-card.is-unlock {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.22);
+}
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -24px;
+  width: 10px;
+  height: 18px;
+  border-radius: 3px;
+  opacity: 0.95;
+  animation: confettiFall linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--confetti-x, 0px), 105vh, 0) rotate(var(--confetti-rotate, 540deg));
+    opacity: 0;
+  }
+}
+
 </style>
 
 </head>
@@ -1226,7 +2152,7 @@
         <path d="M13 4L7 10L13 16"/>
       </svg>
     </div>
-    <span class="nav-title">QR của tôi</span>
+    <span class="nav-title" id="navTitle">QR của tôi</span>
     <div style="display:flex;gap:8px;align-items:center">
       <div class="nav-btn">
         <svg viewBox="0 0 20 20" fill="none">
@@ -1255,89 +2181,13 @@
     <div class="ip-skin-banner-bg" id="skinBannerBg"></div>
     <div class="ip-skin-banner-pattern" id="skinBannerPattern"></div>
     <button class="ip-skin-tag skin-xu-tag" id="skinTag" type="button" onclick="openSkinSheet()">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_11461_11122)">
-<path d="M1.78211 12.1483C2.76626 14.1263 4.27667 15.3751 5.15574 14.9377L6.34957 14.3437L5.74629 13.1313C5.67985 12.3768 5.41744 11.4728 4.96548 10.5644C4.51358 9.65619 3.95078 8.90166 3.38896 8.39349L2.78568 7.18101L1.59185 7.77502C0.712785 8.2124 0.797951 10.1704 1.78211 12.1483Z" fill="#FFEB75"/>
-<mask id="mask0_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="7" width="7" height="9">
-<path d="M1.78211 12.1483C2.76626 14.1263 4.27667 15.3751 5.15574 14.9377L6.34957 14.3437L5.74629 13.1313C5.67985 12.3768 5.41744 11.4728 4.96548 10.5644C4.51358 9.65619 3.95078 8.90166 3.38896 8.39349L2.78568 7.18101L1.59185 7.77502C0.712785 8.2124 0.797951 10.1704 1.78211 12.1483Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_11461_11122)">
-<path d="M2.03576 12.655C3.01992 14.633 4.53033 15.8818 5.40939 15.4444L6.60322 14.8504L6.00001 13.6381C5.93351 12.8834 5.6711 11.9794 5.21913 11.0711C4.76724 10.1629 4.20443 9.40833 3.64261 8.90016L3.0394 7.68782L1.84557 8.28182C0.966507 8.71921 1.05167 10.6772 2.03576 12.655Z" fill="#F6C315"/>
-</g>
-<path d="M1.78211 12.1483C2.76626 14.1263 4.27667 15.3751 5.15574 14.9377L6.34957 14.3437L5.74629 13.1313C5.67985 12.3768 5.41744 11.4728 4.96548 10.5644C4.51358 9.65619 3.95078 8.90166 3.38896 8.39348L2.78568 7.18101L1.59185 7.77502C0.712784 8.2124 0.797951 10.1704 1.78211 12.1483Z" stroke="#D79B00" stroke-width="0.130876" stroke-linejoin="round"/>
-<path d="M2.9762 11.5542C3.96034 13.5322 5.47076 14.781 6.34983 14.3436C7.22889 13.9063 7.14371 11.9483 6.15957 9.97032C5.17543 7.99239 3.665 6.74353 2.78594 7.18092C1.90687 7.61831 1.99206 9.57631 2.9762 11.5542Z" fill="#FBDD32" stroke="#D79B00" stroke-width="0.130876"/>
-<path d="M5.49749 10.3022C5.87843 11.0678 6.1374 11.798 6.22027 12.3739C6.26181 12.662 6.25854 12.9065 6.20809 13.0959C6.15811 13.2835 6.06314 13.4128 5.922 13.4831C5.78086 13.5533 5.62051 13.5508 5.44074 13.4777C5.25924 13.4037 5.06226 13.2588 4.85747 13.0519C4.44811 12.6385 4.02191 11.9916 3.64097 11.226C3.26009 10.4605 3.00113 9.73034 2.91825 9.15446C2.87671 8.86633 2.87998 8.62184 2.93044 8.43245C2.98042 8.24479 3.07525 8.11554 3.21632 8.04518C3.35746 7.97496 3.51795 7.97733 3.69779 8.05065C3.87928 8.12463 4.07627 8.26947 4.28105 8.47639C4.69042 8.88982 5.11662 9.53674 5.49749 10.3022Z" fill="#F6C315"/>
-<mask id="mask1_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="7" width="5" height="7">
-<path d="M5.49749 10.3022C5.87843 11.0678 6.1374 11.798 6.22027 12.3739C6.26181 12.662 6.25854 12.9065 6.20809 13.0959C6.15811 13.2835 6.06314 13.4128 5.922 13.4831C5.78086 13.5533 5.62051 13.5508 5.44074 13.4777C5.25924 13.4037 5.06226 13.2588 4.85747 13.0519C4.44811 12.6385 4.02191 11.9916 3.64097 11.226C3.26009 10.4605 3.00113 9.73034 2.91825 9.15446C2.87671 8.86633 2.87998 8.62184 2.93044 8.43245C2.98042 8.24479 3.07525 8.11554 3.21632 8.04518C3.35746 7.97496 3.51795 7.97733 3.69779 8.05065C3.87928 8.12463 4.07627 8.26947 4.28105 8.47639C4.69042 8.88982 5.11662 9.53674 5.49749 10.3022Z" fill="white"/>
-</mask>
-<g mask="url(#mask1_11461_11122)">
-<path d="M5.47686 13.9435C4.8175 14.2716 3.86146 13.1915 3.096 11.6531C2.33054 10.1146 2.04557 8.70059 2.70494 8.37251C3.36417 8.04451 4.32021 9.12465 5.08567 10.6631C5.85113 12.2015 6.13609 13.6155 5.47686 13.9435Z" fill="#FFEB75"/>
-</g>
-<path d="M5.49749 10.3022C5.87843 11.0678 6.1374 11.798 6.22027 12.3739C6.26181 12.662 6.25854 12.9065 6.20809 13.0959C6.15811 13.2835 6.06314 13.4128 5.922 13.4831C5.78086 13.5533 5.62051 13.5508 5.44074 13.4777C5.25924 13.4037 5.06226 13.2588 4.85747 13.0519C4.44811 12.6385 4.02191 11.9916 3.64097 11.226C3.26009 10.4605 3.00113 9.73034 2.91825 9.15446C2.87671 8.86633 2.87998 8.62184 2.93044 8.43245C2.98042 8.24479 3.07525 8.11554 3.21632 8.04518C3.35746 7.97496 3.51795 7.97733 3.69779 8.05065C3.87928 8.12463 4.07627 8.26947 4.28105 8.47639C4.69042 8.88982 5.11662 9.53674 5.49749 10.3022Z" stroke="#D79B00" stroke-width="0.130876"/>
-<path d="M14.3203 9.52132C14.3395 9.55048 14.3352 9.58935 14.3103 9.61362C13.0999 10.7937 11.1848 10.9874 9.74735 9.98407C8.12023 8.84814 7.72189 6.6082 8.85791 4.98089C9.27148 4.38838 9.83166 3.95861 10.4554 3.70679L10.4677 3.70301C10.4968 3.69688 10.5273 3.70902 10.544 3.73472C10.563 3.76392 10.5588 3.8026 10.5337 3.82693C10.3802 3.97655 10.2386 4.14279 10.1114 4.3251C9.02172 5.88602 9.40383 8.03481 10.9648 9.12453C11.9572 9.8173 13.1873 9.91537 14.2319 9.49348L14.2441 9.48975C14.2732 9.48363 14.3037 9.49577 14.3203 9.52132Z" fill="#E24F2D" stroke="#A82E13" stroke-width="0.131576" stroke-linejoin="round"/>
-<path d="M8.90381 2.24634C11.3041 2.35016 13.166 4.3801 13.0624 6.78046C12.9587 9.18082 10.9287 11.0427 8.52839 10.939C6.12803 10.8354 4.2661 8.80557 4.36981 6.40506C4.47334 4.00467 6.50342 2.14281 8.90381 2.24634Z" fill="#E24F2D" stroke="#A82E13" stroke-width="0.131576"/>
-<path d="M8.91984 1.90015C11.3202 2.00383 13.1821 4.03377 13.0784 6.43413C12.9747 8.83463 10.9448 10.6964 8.54445 10.5927C6.14409 10.489 4.28201 8.4592 4.38569 6.05884C4.4894 3.65834 6.51934 1.79644 8.91984 1.90015Z" fill="#FFF9D9"/>
-<mask id="mask2_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="4" y="1" width="10" height="10">
-<path d="M8.91984 1.90015C11.3202 2.00383 13.1821 4.03377 13.0784 6.43413C12.9747 8.83463 10.9448 10.6964 8.54445 10.5927C6.14409 10.489 4.28201 8.4592 4.38569 6.05884C4.4894 3.65834 6.51934 1.79644 8.91984 1.90015Z" fill="white"/>
-</mask>
-<g mask="url(#mask2_11461_11122)">
-<path d="M8.43017 10.6572C10.7902 10.7591 12.786 8.9285 12.888 6.56845C12.9899 4.2084 11.1593 2.21258 8.79925 2.11066C6.4392 2.00874 4.44338 3.83932 4.34146 6.19937C4.23954 8.55942 6.07012 10.5552 8.43017 10.6572Z" fill="#FBDE33"/>
-</g>
-<path d="M8.91984 1.90015C11.3202 2.00383 13.1821 4.03377 13.0784 6.43413C12.9747 8.83463 10.9448 10.6964 8.54445 10.5927C6.14409 10.489 4.28201 8.4592 4.38569 6.05884C4.4894 3.65834 6.51934 1.79644 8.91984 1.90015Z" stroke="#A82E13" stroke-width="0.131576"/>
-<path d="M8.58911 9.60724C10.4449 9.68738 12.0143 8.24792 12.0945 6.39212C12.1746 4.53631 10.7351 2.96691 8.87934 2.88677C7.02353 2.80662 5.45413 4.24608 5.37399 6.10189C5.29385 7.9577 6.73331 9.52709 8.58911 9.60724Z" fill="#E24F2D"/>
-<mask id="mask3_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="2" width="8" height="8">
-<path d="M8.58911 9.60724C10.4449 9.68738 12.0143 8.24792 12.0945 6.39212C12.1746 4.53631 10.7351 2.96691 8.87934 2.88677C7.02353 2.80662 5.45413 4.24608 5.37399 6.10189C5.29385 7.9577 6.73331 9.52709 8.58911 9.60724Z" fill="white"/>
-</mask>
-<g mask="url(#mask3_11461_11122)">
-<path d="M8.60099 10.1478C10.5047 10.23 12.1146 8.75342 12.1968 6.8497C12.2791 4.94597 10.8024 3.33605 8.89872 3.25384C6.99499 3.17163 5.38507 4.64825 5.30286 6.55197C5.22065 8.4557 6.69727 10.0656 8.60099 10.1478Z" fill="#FF9064"/>
-<mask id="mask4_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="3" width="8" height="8">
-<path d="M8.60099 10.1478C10.5047 10.23 12.1146 8.75342 12.1968 6.8497C12.2791 4.94597 10.8024 3.33605 8.89872 3.25384C6.99499 3.17163 5.38507 4.64825 5.30286 6.55197C5.22065 8.4557 6.69727 10.0656 8.60099 10.1478Z" fill="white"/>
-</mask>
-<g mask="url(#mask4_11461_11122)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M-0.669134 -3.53021C0.719901 -3.53021 1.39565 -3.70541 2.10894 -3.89061C2.81972 -4.07331 3.55303 -4.26352 4.99713 -4.26352C6.44122 -4.26352 7.17454 -4.07331 7.88532 -3.89061C8.60111 -3.70541 9.27436 -3.53022 10.6634 -3.53022C11.2415 -3.53022 11.6945 -3.56025 12.08 -3.6103L12.08 -3.16481C11.6895 -3.11976 12.1075 -3.08973 10.6634 -3.08973C9.2193 -3.08973 8.48598 -3.27994 7.7752 -3.46264C7.05941 -3.64784 6.38616 -3.82304 4.99713 -3.82304C3.60809 -3.82304 2.93235 -3.64784 2.21906 -3.46264C1.50827 -3.27994 0.774963 -3.08973 -0.669133 -3.08972L-0.669134 -3.53021ZM-0.669133 -2.74685C0.719901 -2.74685 1.39565 -2.92204 2.10894 -3.10724C2.81972 -3.28995 3.55303 -3.48016 4.99713 -3.48016C6.44122 -3.48016 7.17454 -3.28995 7.88532 -3.10725C8.60111 -2.92204 9.27436 -2.74685 10.6634 -2.74685C11.2415 -2.74685 11.6945 -2.77688 12.08 -2.82694L12.08 -2.38145C11.6895 -2.3364 12.1075 -2.30636 10.6634 -2.30636C9.2193 -2.30636 8.48598 -2.49657 7.7752 -2.67927C7.05941 -2.86448 6.38616 -3.03967 4.99713 -3.03967C3.60809 -3.03967 2.93235 -2.86448 2.21906 -2.67927C1.50827 -2.49657 0.774963 -2.30636 -0.669133 -2.30636L-0.669133 -2.74685ZM-0.669133 -1.96849C0.719902 -1.96849 1.39565 -2.14368 2.10894 -2.32888C2.81972 -2.51159 3.55303 -2.7018 4.99713 -2.7018C6.44122 -2.7018 7.17454 -2.51159 7.88532 -2.32889C8.60111 -2.14368 9.27436 -1.96849 10.6634 -1.96849C11.2415 -1.96849 11.6945 -1.99852 12.08 -2.04858L12.08 -1.60309C11.6895 -1.55804 12.1075 -1.528 10.6634 -1.528C9.2193 -1.528 8.48599 -1.71821 7.7752 -1.90091C7.05941 -2.08612 6.38616 -2.26131 4.99713 -2.26131C3.60809 -2.26131 2.93235 -2.08612 2.21906 -1.90091C1.50827 -1.71821 0.774963 -1.528 -0.669133 -1.528L-0.669133 -1.96849ZM-0.669133 -1.18512C0.719902 -1.18512 1.39565 -1.36031 2.10894 -1.54552C2.81972 -1.72822 3.55303 -1.91843 4.99713 -1.91843C6.44122 -1.91843 7.17454 -1.72822 7.88532 -1.54552C8.60111 -1.36032 9.27436 -1.18512 10.6634 -1.18512C11.2415 -1.18512 11.6945 -1.21516 12.08 -1.26521L12.08 -0.81972C11.6895 -0.77467 12.1075 -0.744637 10.6634 -0.744637C9.2193 -0.744636 8.48599 -0.934846 7.7752 -1.11755C7.05941 -1.30275 6.38616 -1.47795 4.99713 -1.47795C3.60809 -1.47794 2.93235 -1.30275 2.21906 -1.11755C1.50827 -0.934844 0.774964 -0.744633 -0.669133 -0.744632L-0.669133 -1.18512ZM-0.669132 -0.404256C0.719902 -0.404257 1.39565 -0.579451 2.10894 -0.764656C2.81972 -0.947358 3.55303 -1.13757 4.99713 -1.13757C6.44123 -1.13757 7.17454 -0.94736 7.88532 -0.764658C8.60111 -0.579454 9.27436 -0.40426 10.6634 -0.404261C11.2415 -0.404261 11.6945 -0.434294 12.08 -0.48435L12.08 -0.0388579C11.6895 0.00619198 12.1075 0.0362249 10.6634 0.0362255C9.2193 0.0362261 8.48599 -0.153984 7.7752 -0.336685C7.05941 -0.52189 6.38616 -0.697083 4.99713 -0.697082C3.60809 -0.697082 2.93235 -0.521888 2.21906 -0.336683C1.50827 -0.153981 0.774964 0.0362295 -0.669132 0.0362301L-0.669132 -0.404256ZM-0.669132 0.376607C0.719903 0.376606 1.39565 0.201412 2.10894 0.0162075C2.81972 -0.166495 3.55303 -0.356705 4.99713 -0.356706C6.44123 -0.356707 7.17454 -0.166497 7.88532 0.0162052C8.60111 0.201409 9.27436 0.376603 10.6634 0.376602C11.2415 0.376602 11.6945 0.346568 12.08 0.296513L12.08 0.742006C11.6895 0.787056 12.1075 0.817089 10.6634 0.817089C9.2193 0.81709 8.48599 0.62688 7.7752 0.444178C7.05941 0.258974 6.38616 0.0837803 4.99713 0.0837809C3.60809 0.0837814 2.93235 0.258976 2.21906 0.44418C1.50827 0.626883 0.774964 0.817093 -0.669132 0.817094L-0.669132 0.376607ZM-0.669132 1.15747C0.719903 1.15747 1.39565 0.982275 2.10894 0.79707C2.81972 0.614368 3.55303 0.424157 4.99713 0.424157C6.44123 0.424156 7.17454 0.614366 7.88532 0.797068C8.60111 0.982273 9.27436 1.15747 10.6634 1.15747C11.2415 1.15747 11.6945 1.12743 12.08 1.07738L12.08 1.52287C11.6895 1.56792 12.1075 1.59795 10.6634 1.59795C9.2193 1.59795 8.48599 1.40774 7.7752 1.22504C7.05941 1.03984 6.38617 0.864643 4.99713 0.864644C3.6081 0.864645 2.93235 1.03984 2.21906 1.22504C1.50827 1.40775 0.774965 1.59796 -0.669132 1.59796L-0.669132 1.15747ZM-0.669131 1.94084C0.719903 1.94084 1.39565 1.76564 2.10894 1.58044C2.81972 1.39773 3.55303 1.20752 4.99713 1.20752C6.44123 1.20752 7.17454 1.39773 7.88532 1.58043C8.60111 1.76564 9.27436 1.94083 10.6634 1.94083C11.2415 1.94083 11.6945 1.9108 12.08 1.86074L12.08 2.30623C11.6895 2.35128 12.1075 2.38132 10.6634 2.38132C9.2193 2.38132 8.48599 2.19111 7.7752 2.00841C7.05941 1.8232 6.38617 1.64801 4.99713 1.64801C3.6081 1.64801 2.93235 1.8232 2.21906 2.00841C1.50827 2.19111 0.774965 2.38132 -0.669131 2.38132L-0.669131 1.94084ZM-0.669131 2.7217C0.719904 2.7217 1.39565 2.5465 2.10894 2.3613C2.81972 2.1786 3.55303 1.98839 4.99713 1.98839C6.44123 1.98838 7.17454 2.1786 7.88532 2.3613C8.60111 2.5465 9.27436 2.72169 10.6634 2.72169C11.2415 2.72169 11.6945 2.69166 12.08 2.6416L12.08 3.0871C11.6895 3.13215 12.1075 3.16218 10.6634 3.16218C9.2193 3.16218 8.48599 2.97197 7.7752 2.78927C7.05941 2.60407 6.38617 2.42887 4.99713 2.42887C3.6081 2.42887 2.93235 2.60407 2.21906 2.78927C1.50828 2.97197 0.774965 3.16219 -0.669131 3.16219L-0.669131 2.7217ZM-0.669131 3.50256C0.719904 3.50256 1.39565 3.32737 2.10894 3.14216C2.81972 2.95946 3.55303 2.76925 4.99713 2.76925C6.44123 2.76925 7.17454 2.95946 7.88532 3.14216C8.60111 3.32736 9.27436 3.50256 10.6634 3.50256C11.2415 3.50256 11.6945 3.47252 12.08 3.42247L12.08 3.86796C11.6895 3.91301 12.1075 3.94304 10.6634 3.94304C9.2193 3.94304 8.48599 3.75283 7.7752 3.57013C7.05941 3.38493 6.38617 3.20974 4.99713 3.20974C3.6081 3.20974 2.93235 3.38493 2.21906 3.57014C1.50828 3.75284 0.774966 3.94305 -0.669131 3.94305L-0.669131 3.50256ZM-0.66913 4.28342C0.719904 4.28342 1.39565 4.10823 2.10894 3.92303C2.81972 3.74032 3.55303 3.55011 4.99713 3.55011C6.44123 3.55011 7.17454 3.74032 7.88532 3.92302C8.60112 4.10823 9.27436 4.28342 10.6634 4.28342C11.2415 4.28342 11.6945 4.25339 12.08 4.20333L12.08 4.64882C11.6895 4.69387 12.1075 4.72391 10.6634 4.72391C9.2193 4.72391 8.48599 4.5337 7.7752 4.351C7.05941 4.16579 6.38617 3.9906 4.99713 3.9906C3.6081 3.9906 2.93235 4.16579 2.21906 4.351C1.50828 4.5337 0.774966 4.72391 -0.66913 4.72391L-0.66913 4.28342ZM-0.66913 5.06679C0.719905 5.06679 1.39565 4.8916 2.10894 4.70639C2.81973 4.52369 3.55304 4.33348 4.99713 4.33348C6.44123 4.33348 7.17454 4.52369 7.88532 4.70639C8.60112 4.89159 9.27436 5.06679 10.6634 5.06679C11.2415 5.06679 11.6945 5.03675 12.08 4.9867L12.08 5.43219C11.6895 5.47724 12.1075 5.50727 10.6634 5.50727C9.2193 5.50727 8.48599 5.31706 7.7752 5.13436C7.05941 4.94916 6.38617 4.77396 4.99713 4.77397C3.6081 4.77397 2.93235 4.94916 2.21906 5.13436C1.50828 5.31707 0.774966 5.50728 -0.66913 5.50728L-0.66913 5.06679ZM-0.66913 5.84765C0.719905 5.84765 1.39565 5.67246 2.10894 5.48725C2.81973 5.30455 3.55304 5.11434 4.99713 5.11434C6.44123 5.11434 7.17454 5.30455 7.88532 5.48725C8.60112 5.67246 9.27436 5.84765 10.6634 5.84765C11.2415 5.84765 11.6945 5.81762 12.08 5.76756L12.08 6.21305C11.6895 6.2581 12.1075 6.28814 10.6634 6.28814C9.2193 6.28814 8.48599 6.09793 7.7752 5.91523C7.05941 5.73002 6.38617 5.55483 4.99713 5.55483C3.6081 5.55483 2.93235 5.73002 2.21906 5.91523C1.50828 6.09793 0.774966 6.28814 -0.66913 6.28814L-0.66913 5.84765ZM-0.66913 6.62852C0.719905 6.62852 1.39565 6.45332 2.10894 6.26812C2.81973 6.08542 3.55304 5.8952 4.99713 5.8952C6.44123 5.8952 7.17454 6.08541 7.88532 6.26812C8.60112 6.45332 9.27436 6.62851 10.6634 6.62851C11.2415 6.62851 11.6945 6.59848 12.08 6.54842L12.08 6.99392C11.6895 7.03897 12.1075 7.069 10.6634 7.069C9.2193 7.069 8.48599 6.87879 7.7752 6.69609C7.05941 6.51088 6.38617 6.33569 4.99713 6.33569C3.6081 6.33569 2.93235 6.51089 2.21906 6.69609C1.50828 6.87879 0.774967 7.069 -0.669129 7.069L-0.66913 6.62852ZM-0.669129 7.40938C0.719906 7.40938 1.39565 7.23419 2.10894 7.04898C2.81973 6.86628 3.55304 6.67607 4.99713 6.67607C6.44123 6.67607 7.17454 6.86628 7.88533 7.04898C8.60112 7.23418 9.27436 7.40938 10.6634 7.40938C11.2415 7.40937 11.6945 7.37934 12.08 7.32929L12.08 7.77478C11.6895 7.81983 12.1075 7.84986 10.6634 7.84986C9.2193 7.84986 8.48599 7.65965 7.7752 7.47695C7.05941 7.29175 6.38617 7.11655 4.99713 7.11655C3.6081 7.11656 2.93235 7.29175 2.21906 7.47695C1.50828 7.65966 0.774967 7.84987 -0.669129 7.84987L-0.669129 7.40938ZM-0.669129 8.19024C0.719906 8.19024 1.39565 8.01505 2.10894 7.82984C2.81973 7.64714 3.55304 7.45693 4.99713 7.45693C6.44123 7.45693 7.17454 7.64714 7.88533 7.82984C8.60112 8.01505 9.27436 8.19024 10.6634 8.19024C11.2415 8.19024 11.6945 8.1602 12.08 8.11015L12.08 8.55564C11.6895 8.60069 12.1075 8.63072 10.6634 8.63073C9.2193 8.63073 8.48599 8.44052 7.7752 8.25781C7.05941 8.07261 6.38617 7.89742 4.99713 7.89742C3.6081 7.89742 2.93235 8.07261 2.21906 8.25782C1.50828 8.44052 0.774967 8.63073 -0.669129 8.63073L-0.669129 8.19024ZM-0.669129 8.97361C0.719906 8.97361 1.39565 8.79841 2.10894 8.61321C2.81973 8.43051 3.55304 8.2403 4.99713 8.2403C6.44123 8.2403 7.17454 8.43051 7.88533 8.61321C8.60112 8.79841 9.27436 8.9736 10.6634 8.9736C11.2415 8.9736 11.6945 8.94357 12.08 8.89352L12.08 9.33901C11.6895 9.38406 12.1075 9.41409 10.6634 9.41409C9.2193 9.41409 8.48599 9.22388 7.7752 9.04118C7.05941 8.85598 6.38617 8.68078 4.99713 8.68078C3.6081 8.68078 2.93235 8.85598 2.21906 9.04118C1.50828 9.22388 0.774968 9.41409 -0.669128 9.4141L-0.669129 8.97361ZM-0.669128 9.75447C0.719906 9.75447 1.39565 9.57928 2.10894 9.39407C2.81973 9.21137 3.55304 9.02116 4.99713 9.02116C6.44123 9.02116 7.17454 9.21137 7.88533 9.39407C8.60112 9.57927 9.27436 9.75447 10.6634 9.75447C11.2415 9.75447 11.6945 9.72443 12.08 9.67438L12.08 10.1199C11.6895 10.1649 12.1075 10.195 10.6634 10.195C9.2193 10.195 8.48599 10.0047 7.7752 9.82204C7.05941 9.63684 6.38617 9.46164 4.99713 9.46165C3.6081 9.46165 2.93235 9.63684 2.21906 9.82204C1.50828 10.0047 0.774968 10.195 -0.669128 10.195L-0.669128 9.75447ZM-0.669128 10.5353C0.719907 10.5353 1.39565 10.3601 2.10894 10.1749C2.81973 9.99223 3.55304 9.80202 4.99713 9.80202C6.44123 9.80202 7.17454 9.99223 7.88533 10.1749C8.60112 10.3601 9.27436 10.5353 10.6634 10.5353C11.2415 10.5353 11.6945 10.5053 12.08 10.4552L12.08 10.9007C11.6895 10.9458 12.1075 10.9758 10.6634 10.9758C9.2193 10.9758 8.48599 10.7856 7.7752 10.6029C7.05941 10.4177 6.38617 10.2425 4.99713 10.2425C3.6081 10.2425 2.93235 10.4177 2.21906 10.6029C1.50828 10.7856 0.774968 10.9758 -0.669128 10.9758L-0.669128 10.5353ZM-0.669128 11.3162C0.719907 11.3162 1.39565 11.141 2.10894 10.9558C2.81973 10.7731 3.55304 10.5829 4.99713 10.5829C6.44123 10.5829 7.17454 10.7731 7.88533 10.9558C8.60112 11.141 9.27436 11.3162 10.6634 11.3162C11.2415 11.3162 11.6945 11.2862 12.08 11.2361L12.08 11.6816C11.6895 11.7266 12.1075 11.7567 10.6634 11.7567C9.2193 11.7567 8.48599 11.5665 7.7752 11.3838C7.05941 11.1986 6.38617 11.0234 4.99713 11.0234C3.6081 11.0234 2.93235 11.1986 2.21906 11.3838C1.50828 11.5665 0.774969 11.7567 -0.669127 11.7567L-0.669128 11.3162ZM-0.669127 12.0996C0.719907 12.0996 1.39565 11.9244 2.10894 11.7392C2.81973 11.5565 3.55304 11.3663 4.99713 11.3663C6.44123 11.3663 7.17454 11.5565 7.88533 11.7392C8.60112 11.9244 9.27436 12.0996 10.6634 12.0996C11.2415 12.0996 11.6945 12.0695 12.08 12.0195L12.08 12.465C11.6895 12.51 12.1075 12.54 10.6634 12.54C9.2193 12.54 8.48599 12.3498 7.7752 12.1671C7.05941 11.9819 6.38617 11.8067 4.99713 11.8067C3.6081 11.8067 2.93235 11.9819 2.21906 12.1671C1.50828 12.3498 0.774969 12.54 -0.669127 12.5401L-0.669127 12.0996ZM-0.669127 12.8804C0.719908 12.8804 1.39565 12.7052 2.10894 12.52C2.81973 12.3373 3.55304 12.1471 4.99713 12.1471C6.44123 12.1471 7.17454 12.3373 7.88533 12.52C8.60112 12.7052 9.27436 12.8804 10.6634 12.8804C11.2415 12.8804 11.6945 12.8504 12.08 12.8003L12.08 13.2458C11.6895 13.2909 12.1075 13.3209 10.6634 13.3209C9.2193 13.3209 8.48599 13.1307 7.77521 12.948C7.05941 12.7628 6.38617 12.5876 4.99714 12.5876C3.6081 12.5876 2.93235 12.7628 2.21907 12.948C1.50828 13.1307 0.774969 13.3209 -0.669127 13.3209L-0.669127 12.8804ZM-0.669127 13.6613C0.719908 13.6613 1.39566 13.4861 2.10894 13.3009C2.81973 13.1182 3.55304 12.928 4.99714 12.928C6.44123 12.928 7.17454 13.1182 7.88533 13.3009C8.60112 13.4861 9.27436 13.6613 10.6634 13.6613C11.2415 13.6613 11.6945 13.6313 12.08 13.5812L12.08 14.0267C11.6895 14.0717 12.1075 14.1018 10.6634 14.1018C9.2193 14.1018 8.48599 13.9116 7.77521 13.7289C7.05941 13.5437 6.38617 13.3685 4.99714 13.3685C3.6081 13.3685 2.93235 13.5437 2.21907 13.7289C1.50828 13.9116 0.77497 14.1018 -0.669127 14.1018L-0.669127 13.6613ZM-0.669126 14.4422C0.719908 14.4422 1.39566 14.267 2.10894 14.0818C2.81973 13.8991 3.55304 13.7088 4.99714 13.7088C6.44123 13.7088 7.17454 13.899 7.88533 14.0818C8.60112 14.267 9.27436 14.4421 10.6634 14.4421C11.2415 14.4421 11.6945 14.4121 12.08 14.3621L12.08 14.8076C11.6895 14.8526 12.1075 14.8826 10.6634 14.8826C9.2193 14.8826 8.48599 14.6924 7.77521 14.5097C7.05941 14.3245 6.38617 14.1493 4.99714 14.1493C3.6081 14.1493 2.93235 14.3245 2.21907 14.5097C1.50828 14.6924 0.77497 14.8826 -0.669126 14.8826L-0.669126 14.4422ZM-0.669126 15.2255C0.719909 15.2255 1.39566 15.0503 2.10894 14.8651C2.81973 14.6824 3.55304 14.4922 4.99714 14.4922C6.44123 14.4922 7.17454 14.6824 7.88533 14.8651C8.60112 15.0503 9.27436 15.2255 10.6634 15.2255C11.2415 15.2255 11.6945 15.1955 12.08 15.1454L12.08 15.5909C11.6895 15.636 12.1075 15.666 10.6634 15.666C9.2193 15.666 8.48599 15.4758 7.77521 15.2931C7.05942 15.1079 6.38617 14.9327 4.99714 14.9327C3.6081 14.9327 2.93235 15.1079 2.21907 15.2931C1.50828 15.4758 0.77497 15.666 -0.669126 15.666L-0.669126 15.2255ZM-0.669126 16.0064C0.719909 16.0064 1.39566 15.8312 2.10894 15.646C2.81973 15.4633 3.55304 15.2731 4.99714 15.2731C6.44123 15.2731 7.17454 15.4633 7.88533 15.646C8.60112 15.8312 9.27436 16.0064 10.6634 16.0064C11.2415 16.0064 11.6945 15.9763 12.08 15.9263L12.08 16.3718C11.6895 16.4168 12.1075 16.4469 10.6634 16.4469C9.2193 16.4469 8.48599 16.2567 7.77521 16.074C7.05942 15.8887 6.38617 15.7136 4.99714 15.7136C3.6081 15.7136 2.93235 15.8887 2.21907 16.074C1.50828 16.2567 0.774971 16.4469 -0.669126 16.4469L-0.669126 16.0064ZM-0.669125 16.7872C0.719909 16.7872 1.39566 16.612 2.10894 16.4268C2.81973 16.2441 3.55304 16.0539 4.99714 16.0539C6.44123 16.0539 7.17454 16.2441 7.88533 16.4268C8.60112 16.612 9.27436 16.7872 10.6634 16.7872C11.2415 16.7872 11.6945 16.7572 12.08 16.7071L12.08 17.1526C11.6895 17.1977 12.1075 17.2277 10.6634 17.2277C9.2193 17.2277 8.48599 17.0375 7.77521 16.8548C7.05942 16.6696 6.38617 16.4944 4.99714 16.4944C3.6081 16.4944 2.93235 16.6696 2.21907 16.8548C1.50828 17.0375 0.774971 17.2277 -0.669125 17.2277L-0.669125 16.7872Z" fill="url(#paint0_linear_11461_11122)"/>
-</g>
-</g>
-<path d="M8.58911 9.60724C10.4449 9.68738 12.0143 8.24792 12.0945 6.39212C12.1746 4.53631 10.7351 2.96691 8.87934 2.88677C7.02353 2.80662 5.45413 4.24608 5.37399 6.10189C5.29385 7.9577 6.73331 9.52709 8.58911 9.60724Z" stroke="#A82E13" stroke-width="0.131576"/>
-<path d="M4.82495 3.67265C4.84854 3.64934 4.88581 3.6444 4.91491 3.66267L6.14332 4.42995C6.16033 4.44051 6.17216 4.45773 6.17615 4.47729C6.18011 4.497 6.17597 4.51749 6.1645 4.53386C5.85057 4.98328 5.65652 5.52434 5.63109 6.11283C5.60576 6.6988 5.7511 7.25232 6.02268 7.72578C6.03259 7.74289 6.03487 7.76342 6.02941 7.78243C6.02392 7.80159 6.01073 7.81758 5.99318 7.82679L4.71086 8.49925C4.67576 8.51768 4.63246 8.50486 4.61317 8.47032C4.21361 7.75479 4.00134 6.92321 4.0392 6.04452C4.07702 5.16882 4.35864 4.36087 4.81565 3.6838L4.82495 3.67265Z" fill="#FFEB75" stroke="#A82E13" stroke-width="0.131576" stroke-linejoin="round"/>
-<path d="M13.0247 4.02656C13.0033 4.00142 12.9666 3.99332 12.9358 4.00895L11.6459 4.66735C11.6281 4.67651 11.6149 4.69264 11.6091 4.71187C11.6034 4.731 11.6058 4.75185 11.6158 4.76913C11.8898 5.244 12.0366 5.79979 12.0111 6.38828C11.9858 6.97411 11.7934 7.51312 11.482 7.96144C11.4707 7.97769 11.4665 7.99787 11.4703 8.01726C11.4742 8.03679 11.4859 8.05384 11.5026 8.06448L12.7221 8.84524C12.7555 8.86653 12.7998 8.85743 12.8222 8.82458C13.2817 8.14626 13.565 7.33598 13.603 6.45747C13.6408 5.58163 13.4298 4.75242 13.0329 4.03851L13.0247 4.02656Z" fill="#FFF8D8"/>
-<mask id="mask5_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="11" y="4" width="3" height="5">
-<path d="M13.0247 4.02656C13.0033 4.00142 12.9666 3.99332 12.9358 4.00895L11.6459 4.66735C11.6281 4.67651 11.6149 4.69264 11.6091 4.71187C11.6034 4.731 11.6058 4.75185 11.6158 4.76913C11.8898 5.244 12.0366 5.79979 12.0111 6.38828C11.9858 6.97411 11.7934 7.51312 11.482 7.96144C11.4707 7.97769 11.4665 7.99787 11.4703 8.01726C11.4742 8.03679 11.4859 8.05384 11.5026 8.06448L12.7221 8.84524C12.7555 8.86653 12.7998 8.85743 12.8222 8.82458C13.2817 8.14626 13.565 7.33598 13.603 6.45747C13.6408 5.58163 13.4298 4.75242 13.0329 4.03851L13.0247 4.02656Z" fill="white"/>
-</mask>
-<g mask="url(#mask5_11461_11122)">
-<path d="M11.4797 4.72481C11.7605 5.21135 11.9106 5.78101 11.8846 6.38374C11.8588 6.98381 11.6616 7.536 11.3425 7.99524L12.5621 8.77586C13.0143 8.10837 13.293 7.31116 13.3304 6.44658C13.3676 5.58466 13.1601 4.76878 12.7696 4.06641L11.4797 4.72481Z" fill="#FFEB75"/>
-</g>
-<path d="M13.0247 4.02656C13.0033 4.00142 12.9666 3.99332 12.9358 4.00895L11.6459 4.66735C11.6281 4.67651 11.6149 4.69264 11.6091 4.71187C11.6034 4.731 11.6058 4.75185 11.6158 4.76913C11.8898 5.244 12.0366 5.79979 12.0111 6.38828C11.9858 6.97411 11.7934 7.51312 11.482 7.96144C11.4707 7.97769 11.4665 7.99787 11.4703 8.01726C11.4742 8.03679 11.4859 8.05384 11.5026 8.06448L12.7221 8.84524C12.7555 8.86653 12.7998 8.85743 12.8222 8.82458C13.2817 8.14626 13.565 7.33598 13.603 6.45747C13.6408 5.58163 13.4298 4.75242 13.0329 4.03851L13.0247 4.02656Z" stroke="#A82E13" stroke-width="0.131576" stroke-linejoin="round"/>
-<path d="M9.52233 4.61129C10.2233 4.64148 10.7664 5.23372 10.7362 5.93457L10.647 8.00015L9.58415 7.95426L9.67389 5.87863C9.67842 5.77071 9.59445 5.67908 9.48642 5.67438C9.3785 5.66986 9.28702 5.75386 9.28235 5.86174L9.1926 7.93738L8.1299 7.89138L8.21947 5.81586C8.22417 5.70783 8.14017 5.61634 8.03228 5.61167C7.9244 5.60701 7.83262 5.69094 7.82796 5.79883L7.73835 7.8745L6.67501 7.82866L6.76423 5.76308C6.79439 5.06223 7.38666 4.51901 8.08762 4.54935C8.35395 4.5608 8.59727 4.65358 8.79537 4.80254C9.00544 4.67107 9.2559 4.59966 9.52233 4.61129Z" fill="#FFF9D9" stroke="#A82E13" stroke-width="0.131576"/>
-<path d="M15.4855 5.50899C15.6961 5.60454 15.7182 5.89487 15.5245 6.02122L15.291 6.17345C15.5302 7.1435 15.3662 8.20812 14.7492 9.09191C13.9828 10.1898 12.7138 10.7281 11.4697 10.6135C11.4345 10.6102 11.4065 10.5819 11.4036 10.5465C11.4007 10.5112 11.4238 10.4789 11.458 10.4699C12.2238 10.2703 12.9249 9.80759 13.4133 9.10789C13.8621 8.46497 14.061 7.72257 14.0312 6.99537L13.6162 7.26615C13.4225 7.3925 13.1656 7.25519 13.163 7.02407L13.139 4.90221C13.1366 4.68774 13.3578 4.54335 13.5532 4.63202L15.4855 5.50899Z" fill="#FFDFBC" stroke="#A82E13" stroke-width="0.131576" stroke-linejoin="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9436 10.9425C12.0783 10.9425 12.2074 10.9964 12.3026 11.0924C12.3979 11.187 12.4512 11.3158 12.4512 11.4512C12.4512 11.7549 12.4512 12.1387 12.4512 12.4423C12.4512 12.5764 12.3979 12.7052 12.3026 12.8012C12.2074 12.8958 12.0783 12.9497 11.9436 12.9497C10.5885 12.9497 6.89676 12.9497 5.5417 12.9497C5.40697 12.9497 5.27789 12.8958 5.18272 12.8012C5.08755 12.7052 5.03406 12.5764 5.03406 12.4423C5.03406 12.1387 5.03406 11.7549 5.03406 11.4512C5.03406 11.3158 5.08755 11.187 5.18272 11.0924C5.27789 10.9964 5.40697 10.9425 5.5417 10.9425C6.89676 10.9425 10.5885 10.9425 11.9436 10.9425Z" fill="#FBDD32"/>
-<mask id="mask6_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="10" width="8" height="3">
-<path d="M11.9436 10.9425C12.0783 10.9425 12.2074 10.9964 12.3026 11.0924C12.3979 11.187 12.4512 11.3158 12.4512 11.4512C12.4512 11.7549 12.4512 12.1387 12.4512 12.4423C12.4512 12.5764 12.3979 12.7052 12.3026 12.8012C12.2074 12.8958 12.0783 12.9497 11.9436 12.9497C10.5885 12.9497 6.89676 12.9497 5.5417 12.9497C5.40697 12.9497 5.27789 12.8958 5.18272 12.8012C5.08755 12.7052 5.03406 12.5764 5.03406 12.4423C5.03406 12.1387 5.03406 11.7549 5.03406 11.4512C5.03406 11.3158 5.08755 11.187 5.18272 11.0924C5.27789 10.9964 5.40697 10.9425 5.5417 10.9425C6.89676 10.9425 10.5885 10.9425 11.9436 10.9425Z" fill="white"/>
-</mask>
-<g mask="url(#mask6_11461_11122)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M5.00825 12.852C4.9976 12.7166 5.0749 11.899 5.27509 11.6177C5.95282 10.6661 9.24498 11.0841 8.5875 10.6358C7.85666 10.139 5.99027 9.92471 5.22763 10.3072C4.42713 10.7081 4.55516 11.527 4.63718 12.5733C4.64441 12.6667 5.01548 12.944 5.00825 12.852Z" fill="white"/>
-</g>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9436 10.9425C12.0783 10.9425 12.2074 10.9964 12.3026 11.0924C12.3979 11.187 12.4512 11.3158 12.4512 11.4512C12.4512 11.7549 12.4512 12.1387 12.4512 12.4423C12.4512 12.5764 12.3979 12.7052 12.3026 12.8012C12.2074 12.8958 12.0783 12.9497 11.9436 12.9497C10.5885 12.9497 6.89676 12.9497 5.5417 12.9497C5.40697 12.9497 5.27789 12.8958 5.18272 12.8012C5.08755 12.7052 5.03406 12.5764 5.03406 12.4423C5.03406 12.1387 5.03406 11.7549 5.03406 11.4512C5.03406 11.3158 5.08755 11.187 5.18272 11.0924C5.27789 10.9964 5.40697 10.9425 5.5417 10.9425C6.89676 10.9425 10.5885 10.9425 11.9436 10.9425Z" stroke="#D79B00" stroke-width="0.131445" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7163 12.9486C12.8511 12.9486 12.9802 13.0025 13.0753 13.0985C13.1706 13.1931 13.224 13.3219 13.224 13.4573C13.224 13.761 13.224 14.1448 13.224 14.4484C13.224 14.5825 13.1706 14.7113 13.0753 14.8073C12.9802 14.9019 12.8511 14.9558 12.7163 14.9558C11.3613 14.9558 7.66953 14.9558 6.31446 14.9558C6.17973 14.9558 6.05065 14.9019 5.95549 14.8073C5.86032 14.7113 5.80682 14.5825 5.80682 14.4484C5.80682 14.1448 5.80682 13.761 5.80682 13.4573C5.80682 13.3219 5.86032 13.1931 5.95549 13.0985C6.05065 13.0025 6.17973 12.9486 6.31446 12.9486C7.66953 12.9486 11.3613 12.9486 12.7163 12.9486Z" fill="#FBDD32"/>
-<mask id="mask7_11461_11122" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="12" width="9" height="3">
-<path d="M12.7163 12.9486C12.8511 12.9486 12.9802 13.0025 13.0753 13.0985C13.1706 13.1931 13.224 13.3219 13.224 13.4573C13.224 13.761 13.224 14.1448 13.224 14.4484C13.224 14.5825 13.1706 14.7113 13.0753 14.8073C12.9802 14.9019 12.8511 14.9558 12.7163 14.9558C11.3613 14.9558 7.66953 14.9558 6.31446 14.9558C6.17973 14.9558 6.05065 14.9019 5.95549 14.8073C5.86032 14.7113 5.80682 14.5825 5.80682 14.4484C5.80682 14.1448 5.80682 13.761 5.80682 13.4573C5.80682 13.3219 5.86032 13.1931 5.95549 13.0985C6.05065 13.0025 6.17973 12.9486 6.31446 12.9486C7.66953 12.9486 11.3613 12.9486 12.7163 12.9486Z" fill="white"/>
-</mask>
-<g mask="url(#mask7_11461_11122)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M5.87556 14.7651C5.86491 14.6297 5.94221 13.8121 6.1424 13.5308C6.82013 12.5792 10.1123 12.9972 9.45481 12.5489C8.72397 12.0521 6.85758 11.8378 6.09494 12.2203C5.29444 12.6212 5.42247 13.4401 5.50449 14.4864C5.51172 14.5797 5.88279 14.8571 5.87556 14.7651Z" fill="white"/>
-</g>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7163 12.9486C12.8511 12.9486 12.9802 13.0025 13.0753 13.0985C13.1706 13.1931 13.224 13.3219 13.224 13.4573C13.224 13.761 13.224 14.1448 13.224 14.4484C13.224 14.5825 13.1706 14.7113 13.0753 14.8073C12.9802 14.9019 12.8511 14.9558 12.7163 14.9558C11.3613 14.9558 7.66953 14.9558 6.31446 14.9558C6.17973 14.9558 6.05065 14.9019 5.95549 14.8073C5.86032 14.7113 5.80682 14.5825 5.80682 14.4484C5.80682 14.1448 5.80682 13.761 5.80682 13.4573C5.80682 13.3219 5.86032 13.1931 5.95549 13.0985C6.05065 13.0025 6.17973 12.9486 6.31446 12.9486C7.66953 12.9486 11.3613 12.9486 12.7163 12.9486Z" stroke="#D79B00" stroke-width="0.131445" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_11461_11122" x1="11.7088" y1="6.4821" x2="5.40819" y2="6.4821" gradientUnits="userSpaceOnUse">
-<stop/>
-<stop offset="1" stop-opacity="0"/>
-</linearGradient>
-<clipPath id="clip0_11461_11122">
-<rect width="16" height="16" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-
-        <span id="skinXuBalance">Đổi 99.999 XU</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="8"></circle>
+          <path d="M9 9h6"></path>
+          <path d="M9 15h6"></path>
+          <path d="M12 7v10"></path>
+        </svg>
+        <span id="skinXuBalance">Redeem 99.999 XU</span>
       </button>
     <div class="ip-skin-content-wrapper" id="skinContent">
       <!-- Dynamic skin content injected by JS -->
@@ -1345,7 +2195,7 @@
   </div>
 
   <!-- SCROLL BODY -->
-  <div class="scroll-body">
+  <div class="scroll-body" id="myQrScreen">
     <div class="main-card">
 
       <!-- QR CODE AREA -->
@@ -1469,7 +2319,7 @@
           </div>
           <button class="see-all-btn"  onclick="handleSeeAllClick()">
             <span class="see-all-btn-inner">
-    ĐƯA QR CHO SCAN
+    THANH TOÁN LIỀN
     <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
   </span>
            
@@ -1565,40 +2415,254 @@
     </div>
   </div><!-- /scroll-body -->
 
+  
+  
+<div class="receive-money-screen" id="receiveMoneyScreen" style="display:none;">
+    <div class="receive-scroll">
+      <div class="receive-section">
+        <div class="receive-main-card">
+          <div class="receive-section-head">
+            <div class="receive-title">Nhận tiền qua mã QR</div>
+            <div class="receive-title-badge">
+              <span class="receive-title-badge-dot"></span>
+              <span>Sẵn sàng nhận tiền</span>
+            </div>
+          </div>
+
+          <div class="receive-hero" id="receiveHero">
+            <div class="receive-hero-top">
+              <div class="receive-hero-copy">
+                <div class="receive-user-name">LỤ VÀNG TỒN</div>
+                <div class="receive-user-row">
+                  <span class="receive-user-code">*******840</span>
+                  <button class="receive-eye-btn" type="button" aria-label="Ẩn/hiện">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20C7 20 2.73 16.89 1 12c.92-2.61 2.66-4.82 4.94-6.33"></path>
+                      <path d="M10.58 10.58a2 2 0 1 0 2.83 2.83"></path>
+                      <path d="M9.88 5.09A11 11 0 0 1 12 4c5 0 9.27 3.11 11 8a10.96 10.96 0 0 1-4.13 5.09"></path>
+                      <path d="M1 1l22 22"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="receive-status-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20"></path>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span>Miễn phí tạo mã</span>
+              </div>
+            </div>
+
+            <div class="receive-qr-card">
+              <div class="receive-qr-logos">
+                <span class="receive-logo momo">mo<br>mo</span>
+                <span class="receive-logo-divider"></span>
+                <span class="receive-logo vietqr">VIETQR</span>
+                <span class="receive-logo-divider"></span>
+                <span class="receive-logo napas">napas247</span>
+              </div>
+
+              <div class="receive-qr-wrap">
+                <svg width="276" height="276" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="36" height="36" rx="3" fill="#111"></rect>
+                  <rect x="12" y="12" width="28" height="28" rx="2" fill="#fff"></rect>
+                  <rect x="16" y="16" width="20" height="20" rx="1.5" fill="#111"></rect>
+
+                  <rect x="96" y="8" width="36" height="36" rx="3" fill="#111"></rect>
+                  <rect x="100" y="12" width="28" height="28" rx="2" fill="#fff"></rect>
+                  <rect x="104" y="16" width="20" height="20" rx="1.5" fill="#111"></rect>
+
+                  <rect x="8" y="96" width="36" height="36" rx="3" fill="#111"></rect>
+                  <rect x="12" y="100" width="28" height="28" rx="2" fill="#fff"></rect>
+                  <rect x="16" y="104" width="20" height="20" rx="1.5" fill="#111"></rect>
+
+                  <g fill="#111" opacity="0.92">
+                    <rect x="52" y="8" width="6" height="6" rx="1"></rect><rect x="60" y="8" width="6" height="6" rx="1"></rect>
+                    <rect x="76" y="8" width="6" height="6" rx="1"></rect><rect x="84" y="8" width="6" height="6" rx="1"></rect>
+                    <rect x="52" y="16" width="6" height="6" rx="1"></rect><rect x="68" y="16" width="6" height="6" rx="1"></rect>
+                    <rect x="52" y="24" width="6" height="6" rx="1"></rect><rect x="60" y="24" width="6" height="6" rx="1"></rect>
+                    <rect x="76" y="24" width="6" height="6" rx="1"></rect><rect x="52" y="32" width="6" height="6" rx="1"></rect>
+                    <rect x="68" y="32" width="6" height="6" rx="1"></rect><rect x="84" y="32" width="6" height="6" rx="1"></rect>
+                    <rect x="8" y="52" width="6" height="6" rx="1"></rect><rect x="16" y="52" width="6" height="6" rx="1"></rect>
+                    <rect x="32" y="52" width="6" height="6" rx="1"></rect><rect x="52" y="52" width="6" height="6" rx="1"></rect>
+                    <rect x="68" y="52" width="6" height="6" rx="1"></rect><rect x="84" y="52" width="6" height="6" rx="1"></rect>
+                    <rect x="100" y="52" width="6" height="6" rx="1"></rect><rect x="116" y="52" width="6" height="6" rx="1"></rect>
+                    <rect x="8" y="60" width="6" height="6" rx="1"></rect><rect x="24" y="60" width="6" height="6" rx="1"></rect>
+                    <rect x="52" y="60" width="6" height="6" rx="1"></rect><rect x="76" y="60" width="6" height="6" rx="1"></rect>
+                    <rect x="92" y="60" width="6" height="6" rx="1"></rect><rect x="124" y="60" width="6" height="6" rx="1"></rect>
+                    <rect x="8" y="68" width="6" height="6" rx="1"></rect><rect x="32" y="68" width="6" height="6" rx="1"></rect>
+                    <rect x="60" y="68" width="6" height="6" rx="1"></rect><rect x="84" y="68" width="6" height="6" rx="1"></rect>
+                    <rect x="108" y="68" width="6" height="6" rx="1"></rect><rect x="16" y="76" width="6" height="6" rx="1"></rect>
+                    <rect x="40" y="76" width="6" height="6" rx="1"></rect><rect x="68" y="76" width="6" height="6" rx="1"></rect>
+                    <rect x="92" y="76" width="6" height="6" rx="1"></rect><rect x="116" y="76" width="6" height="6" rx="1"></rect>
+                    <rect x="52" y="96" width="6" height="6" rx="1"></rect><rect x="60" y="96" width="6" height="6" rx="1"></rect>
+                    <rect x="76" y="96" width="6" height="6" rx="1"></rect><rect x="100" y="96" width="6" height="6" rx="1"></rect>
+                    <rect x="116" y="96" width="6" height="6" rx="1"></rect><rect x="52" y="104" width="6" height="6" rx="1"></rect>
+                    <rect x="68" y="104" width="6" height="6" rx="1"></rect><rect x="84" y="104" width="6" height="6" rx="1"></rect>
+                    <rect x="108" y="104" width="6" height="6" rx="1"></rect><rect x="52" y="112" width="6" height="6" rx="1"></rect>
+                    <rect x="76" y="112" width="6" height="6" rx="1"></rect><rect x="92" y="112" width="6" height="6" rx="1"></rect>
+                    <rect x="124" y="112" width="6" height="6" rx="1"></rect><rect x="52" y="120" width="6" height="6" rx="1"></rect>
+                    <rect x="60" y="120" width="6" height="6" rx="1"></rect><rect x="84" y="120" width="6" height="6" rx="1"></rect>
+                    <rect x="100" y="120" width="6" height="6" rx="1"></rect>
+                  </g>
+                </svg>
+                <div class="receive-avatar">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="avatar">
+                </div>
+              </div>
+
+              <button class="receive-add-amount" type="button" onclick="handleReceiveAddAmount()">+ Thêm số tiền</button>
+            </div>
+
+            <div class="receive-actions">
+              <button class="receive-action-btn" type="button" onclick="handleReceiveAction('download')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 3v12"></path>
+                  <path d="M7 10l5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+                <span>Tải xuống</span>
+              </button>
+              <div class="receive-action-divider"></div>
+              <button class="receive-action-btn" type="button" onclick="handleReceiveCustomize()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.65 1.65 0 0 0 15 19.4a1.65 1.65 0 0 0-1 .6 1.65 1.65 0 0 1-2 0 1.65 1.65 0 0 0-1-.6 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-.6-1 1.65 1.65 0 0 1 0-2 1.65 1.65 0 0 0 .6-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-.6 1.65 1.65 0 0 1 2 0 1.65 1.65 0 0 0 1 .6 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.24.32.43.67.6 1a1.65 1.65 0 0 1 0 2c-.17.33-.36.68-.6 1z"></path>
+                </svg>
+                <span>Tùy chỉnh</span>
+              </button>
+              <div class="receive-action-divider"></div>
+              <button class="receive-action-btn" type="button" onclick="handleReceiveAction('share')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12v7a1 1 0 0 0 1 1h14"></path>
+                  <path d="M16 6l4 4-4 4"></path>
+                  <path d="M20 10H9a5 5 0 0 0-5 5"></path>
+                </svg>
+                <span>Chia sẻ</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="receive-skin-strip">
+        <button class="receive-skin-all active" type="button" onclick="showSkinToast('🎨 Chọn skin phía bên phải để áp dụng cho QR nhận tiền')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+            <circle cx="8.5" cy="9" r="1.2"></circle>
+            <path d="M21 15l-4.5-4.5L8 19"></path>
+          </svg>
+          <span>Tất cả</span>
+        </button>
+
+        <div class="receive-skin-divider"></div>
+
+        <div class="receive-skin-list" id="receiveSkinList"></div>
+      </div>
+
+      <div class="receive-secondary-card">
+        <div class="promo-content">
+          <div class="promo-top">
+            <div class="promo-left">
+              <div class="promo-icon-wrap">
+                <img src="https://res.cloudinary.com/dwikngagp/image/upload/q_auto/f_auto/v1775104280/NguonTien_1_c55vie.png" alt="promo icon">
+              </div>
+              <div class="promo-texts">
+                <span class="promo-title">Tự động thêm ghi chú nhận tiền</span>
+                <span class="promo-sub">Chia sẻ mã QR kèm <b>nội dung nhắc chuyển khoản</b></span>
+              </div>
+            </div>
+            <div class="toggle" id="receivePromoToggle" onclick="toggleReceivePromo()">
+              <div class="toggle-knob"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entrypoint receive-entrypoint" onclick="handleReceiveAddAmount()">
+          <div class="entry-icon">
+            <img src="https://res.cloudinary.com/dwikngagp/image/upload/q_auto/f_auto/v1775114333/icons-voucher1_o4xkmu.png" alt="entry icon">
+          </div>
+          <span class="entry-text">Tạo nhanh QR có sẵn số tiền để người nhận chuyển đúng ngay.</span>
+          <button class="entry-btn" type="button">Thiết lập</button>
+        </div>
+      </div>
+
+      <div class="receive-inline-grid">
+        <div class="receive-inline-card">
+          <div class="receive-inline-label">Tiền vào tài khoản</div>
+          <div class="receive-inline-value">Ví MoMo • 50.000đ</div>
+          <div class="receive-inline-sub">Đồng bộ cùng nguồn nhận tiền trên màn QR thanh toán.</div>
+        </div>
+        <div class="receive-inline-card">
+          <div class="receive-inline-label">Skin đang dùng</div>
+          <div class="receive-inline-value" id="receiveCurrentSkinName">MoMo Default</div>
+          <div class="receive-inline-sub">Skin đã mở khóa ở QR thanh toán sẽ dùng được ngay tại đây.</div>
+        </div>
+      </div>
+
+      <div class="receive-personal-section">
+        <div class="receive-personal-title">Dành riêng cho bạn</div>
+
+        <div class="receive-banner-card">
+          <div class="receive-banner-copy">
+            <div class="receive-banner-head">Hoàn đến 10%</div>
+            <div class="receive-banner-sub">Nhận tiền xong có thể chia sẻ tiếp bằng QR cá nhân theo đúng skin bạn vừa chọn.</div>
+          </div>
+          <div class="receive-banner-art"></div>
+        </div>
+
+        <div class="receive-tip-card">
+          <div class="receive-tip-top">
+            <div class="receive-tip-title">Tối ưu trải nghiệm nhận tiền</div>
+            <div class="receive-tip-badge">Đề xuất</div>
+          </div>
+          <div class="receive-tip-text">Dùng cùng một skin ở cả hai màn giúp giao diện đồng nhất hơn khi bạn tải xuống, chia sẻ hoặc cho người khác quét QR.</div>
+          <div class="receive-tip-actions">
+            <button class="receive-tip-btn primary" type="button" onclick="openSkinSheet()">Đổi skin</button>
+            <button class="receive-tip-btn secondary" type="button" onclick="switchBottomTab('my_qr')">Về QR thanh toán</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- BOTTOM TAB -->
   <div class="bottom-tab">
-    <button class="btab active">
+    <button class="btab active" id="tabMyQr" type="button" onclick="switchBottomTab('my_qr')">
       <div class="btab-indicator"></div>
-      <div class="btab-content"style="position:relative">
+      <div class="btab-content" style="position:relative">
         <div class="btab-badge">Mới</div>
-        <svg viewBox="0 0 28 28" fill="none">
-          <rect x="3" y="3" width="9" height="9" rx="1.5" fill="var(--skin-accent, #EB2F96)"/>
-          <rect x="16" y="3" width="9" height="9" rx="1.5" fill="var(--skin-accent, #EB2F96)"/>
-          <rect x="3" y="16" width="9" height="9" rx="1.5" fill="var(--skin-accent, #EB2F96)"/>
-          <rect x="16" y="16" width="4" height="4" rx="1" fill="var(--skin-accent, #EB2F96)"/>
-          <rect x="21" y="16" width="4" height="4" rx="1" fill="var(--skin-accent, #EB2F96)"/>
-          <rect x="16" y="21" width="4" height="4" rx="1" fill="var(--skin-accent, #EB2F96)"/>
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="9" height="9" rx="1.5" fill="currentColor" stroke="none"></rect>
+          <rect x="16" y="3" width="9" height="9" rx="1.5" fill="currentColor" stroke="none"></rect>
+          <rect x="3" y="16" width="9" height="9" rx="1.5" fill="currentColor" stroke="none"></rect>
+          <rect x="16" y="16" width="4" height="4" rx="1" fill="currentColor" stroke="none"></rect>
+          <rect x="21" y="16" width="4" height="4" rx="1" fill="currentColor" stroke="none"></rect>
+          <rect x="16" y="21" width="4" height="4" rx="1" fill="currentColor" stroke="none"></rect>
         </svg>
         <span class="btab-label">QR của tôi</span>
       </div>
     </button>
-    <button class="btab">
+    <button class="btab" id="tabScanQr" type="button">
       <div class="btab-indicator"></div>
       <div class="btab-content">
-        <svg viewBox="0 0 28 28" fill="none" stroke="#727272" stroke-width="1.8" stroke-linecap="round">
-          <path d="M4 9V6a2 2 0 012-2h3M19 4h3a2 2 0 012 2v3M24 19v3a2 2 0 01-2 2h-3M9 24H6a2 2 0 01-2-2v-3"/>
-          <rect x="9" y="9" width="10" height="10" rx="1.5"/>
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 9V6a2 2 0 012-2h3M19 4h3a2 2 0 012 2v3M24 19v3a2 2 0 01-2 2h-3M9 24H6a2 2 0 01-2-2v-3"></path>
+          <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
         </svg>
         <span class="btab-label">Quét mời QR</span>
       </div>
     </button>
-    <button class="btab">
+    <button class="btab" id="tabReceiveQr" type="button" onclick="switchBottomTab('receive_qr')">
       <div class="btab-indicator"></div>
       <div class="btab-content">
-        <svg viewBox="0 0 28 28" fill="none" stroke="#727272" stroke-width="1.8" stroke-linecap="round">
-          <rect x="2" y="5" width="24" height="18" rx="2"/>
-          <line x1="2" y1="11" x2="26" y2="11"/>
-          <line x1="7" y1="17" x2="11" y2="17"/>
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <rect x="2" y="5" width="24" height="18" rx="2"></rect>
+          <line x1="2" y1="11" x2="26" y2="11"></line>
+          <line x1="7" y1="17" x2="11" y2="17"></line>
         </svg>
         <span class="btab-label">QR Nhận tiền</span>
       </div>
@@ -1622,15 +2686,16 @@
 
   <div class="skin-sheet" id="skinSheet" onclick="if(event.target===this)closeSkinSheet()">
   <div class="skin-sheet-panel">
-    <div class="skin-sheet-pill"></div>
     <button class="skin-sheet-close" type="button" aria-label="Đóng" onclick="closeSkinSheet()">✕</button>
+    <div class="skin-sheet-pill"></div>
     <div class="skin-sheet-title">Chọn skin</div>
-    <div class="skin-sheet-sub">Dùng Xu hoặc Thanh toán trả lời đúng câu hỏi</div>
+    <div class="skin-sheet-sub">Bấm để đổi giao diện banner IP skin.</div>
     <div class="skin-list" id="skinList"></div>
   </div>
 </div>
 <div class="skin-sheet" id="quizSheet" onclick="if(event.target===this)closeQuizSheet()">
   <div class="skin-sheet-panel">
+    <button class="skin-sheet-close" type="button" aria-label="Đóng" onclick="closeQuizSheet()">✕</button>
     <div class="skin-sheet-pill"></div>
     <div class="skin-sheet-title" id="quizSkinName">Mở khóa skin</div>
     <div class="skin-sheet-sub" id="quizQuestion">Câu hỏi sẽ hiện ở đây</div>
@@ -1671,6 +2736,19 @@
       <div class="quiz-result-card-label">Trạng thái thu thập skin</div>
       <div class="quiz-result-card-value" id="quizSkinStatusTitle">Thu thập skin thành công</div>
       <div class="quiz-result-card-desc" id="quizSkinStatusDesc">Bạn đã mở khóa skin thành công.</div>
+    </div>
+
+    <div class="stack-progress-card" id="stackProgressCard">
+      <div class="stack-progress-title" id="stackProgressTitle">0/3 • Tích lũy mở khóa skin</div>
+      <div class="stack-progress-desc" id="stackProgressDesc">Thanh toán thêm để mở khóa skin.</div>
+      <div class="stack-progress-bar">
+        <div class="stack-progress-fill" id="stackProgressFill"></div>
+      </div>
+      <div class="stack-progress-markers" id="stackProgressMarkers">
+        <div class="stack-progress-marker">1</div>
+        <div class="stack-progress-marker">2</div>
+        <div class="stack-progress-marker">3</div>
+      </div>
     </div>
 
     <button class="quiz-result-btn" id="quizResultCloseBtn" type="button" onclick="closeQuizResultScreen()">
@@ -1791,12 +2869,221 @@ function getLockedQuizSkinIds() {
   });
 }
 
+
+function renderReceiveTabBadge() {
+  var tab = document.getElementById('tabReceiveQr');
+
+  if (!tab) {
+    return;
+  }
+
+  var content = tab.querySelector('.btab-content');
+  var badge = tab.querySelector('.btab-badge-star');
+
+  if (badge) {
+    badge.parentNode.removeChild(badge);
+  }
+
+  if (!hasNewReceiveSkinBadge || !content) {
+    return;
+  }
+
+  badge = document.createElement('div');
+  badge.className = 'btab-badge btab-badge-star';
+  badge.setAttribute('aria-label', 'Skin mới đã mở khóa');
+  badge.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.56L12 17.53 6.12 20.62l1.12-6.56L2.48 9.42l6.58-.96L12 2.5z"></path></svg>';
+  content.appendChild(badge);
+}
+
+function switchBottomTab(tabKey) {
+  var myQrTab = document.getElementById('tabMyQr');
+  var receiveQrTab = document.getElementById('tabReceiveQr');
+  var myQrScreen = document.getElementById('myQrScreen');
+  var receiveScreen = document.getElementById('receiveMoneyScreen');
+  var banner = document.getElementById('skinBanner');
+  var navTitle = document.getElementById('navTitle');
+
+  currentBottomTab = tabKey === 'receive_qr' ? 'receive_qr' : 'my_qr';
+
+  if (myQrTab) {
+    myQrTab.classList.toggle('active', currentBottomTab === 'my_qr');
+  }
+
+  if (receiveQrTab) {
+    receiveQrTab.classList.toggle('active', currentBottomTab === 'receive_qr');
+  }
+
+  if (myQrScreen) {
+    myQrScreen.style.display = currentBottomTab === 'my_qr' ? 'block' : 'none';
+  }
+
+  if (receiveScreen) {
+    receiveScreen.style.display = currentBottomTab === 'receive_qr' ? 'block' : 'none';
+  }
+
+  if (banner) {
+    banner.style.display = 'block';
+  }
+
+  if (navTitle) {
+    navTitle.textContent = currentBottomTab === 'receive_qr' ? 'Nhận tiền' : 'QR của tôi';
+  }
+
+  if (currentBottomTab === 'receive_qr') {
+    hasNewReceiveSkinBadge = false;
+    renderReceiveSkinList();
+  }
+
+  renderReceiveTabBadge();
+}
+
+function renderReceiveSkinList() {
+  var list = document.getElementById('receiveSkinList');
+  var currentSkinName = document.getElementById('receiveCurrentSkinName');
+
+  if (!list) {
+    return;
+  }
+
+  list.innerHTML = SKINS.map(function(skin, idx) {
+    var unlocked = isSkinUnlockedById(skin.id);
+    var active = unlocked && idx === currentSkinIdx;
+    var thumbClass = 'receive-skin-thumb' + (active ? ' active' : '') + (unlocked ? '' : ' is-locked');
+    var badge = active
+      ? '<div class="receive-skin-thumb-check">✓</div>'
+      : (unlocked ? '' : '<div class="receive-skin-thumb-lock">🔒</div>');
+    var click = unlocked ? 'onclick="selectReceiveSkin(' + idx + ')"' : '';
+
+    return ''
+      + '<button class="' + thumbClass + '" type="button" ' + click + '>'
+      + '  <div class="receive-skin-thumb-fill" style="background:' + (skin.bannerGradient || skin.primary || '#F4DCE9') + ';"></div>'
+      +      badge
+      + '</button>';
+  }).join('');
+
+  if (currentSkinName && SKINS[currentSkinIdx]) {
+    currentSkinName.textContent = SKINS[currentSkinIdx].name;
+  }
+}
+
+function selectReceiveSkin(idx) {
+  var skin = SKINS[idx];
+
+  if (!skin || !isSkinUnlockedById(skin.id)) {
+    showSkinToast('🔒 Skin này chưa mở khóa');
+    return;
+  }
+
+  currentSkinIdx = idx;
+  applySkin(idx);
+  renderSkinList();
+  renderReceiveSkinList();
+  showSkinToast('🎨 Đã chọn skin cho QR nhận tiền: ' + skin.name);
+}
+
+function toggleReceivePromo() {
+  var toggle = document.getElementById('receivePromoToggle');
+
+  if (!toggle) {
+    return;
+  }
+
+  toggle.classList.toggle('off');
+  showSkinToast(toggle.classList.contains('off') ? '📝 Đã tắt ghi chú tự động' : '📝 Đã bật ghi chú tự động');
+}
+
+function handleReceiveAddAmount() {
+  showSkinToast('💸 Đã mở thiết lập thêm số tiền cho QR nhận tiền');
+}
+
+function handleReceiveCustomize() {
+  openSkinSheet();
+  showSkinToast('🎨 Chọn skin để đồng bộ cho QR thanh toán và QR nhận tiền');
+}
+
+function handleReceiveAction(action) {
+  var messages = {
+    download: '⬇️ Đã chuẩn bị tải xuống mã QR nhận tiền',
+    share: '📤 Đã chuẩn bị chia sẻ mã QR nhận tiền'
+  };
+
+  showSkinToast(messages[action] || '✅ Đã xử lý thao tác');
+}
+
+function claimRandomSkinFromPayment() {
+  var skinId = skinUnlockStack.skinId;
+  var skin = null;
+  var skinIndex = -1;
+
+  if (!skinId || isSkinUnlockedById(skinId)) {
+    skinId = getRandomLockedQuizSkinId();
+    skinUnlockStack.skinId = skinId;
+    skinUnlockStack.count = 0;
+  }
+
+  if (!skinId) {
+    showSkinToast('🎉 Bạn đã mở khóa tất cả skin');
+    openSkinSheet();
+    return;
+  }
+
+  skin = getSkinById(skinId);
+
+  if (!skin) {
+    return;
+  }
+
+  skinUnlockStack.count = Math.min(skinUnlockStack.count + 1, skinUnlockStack.target);
+
+  if (skinUnlockStack.count >= skinUnlockStack.target) {
+    skin = unlockSkin(skinId);
+    skinIndex = getSkinIndexById(skinId);
+
+    if (skinIndex >= 0) {
+      currentSkinIdx = skinIndex;
+      applySkin(skinIndex);
+    }
+
+    renderSkinList();
+    renderReceiveSkinList();
+
+    hasNewReceiveSkinBadge = true;
+    renderReceiveTabBadge();
+
+    openQuizResultScreen({
+      isCorrect: true,
+      isUnlock: true,
+      skin: skin,
+      amount: '50.000đ',
+      stackCount: skinUnlockStack.target,
+      stackTarget: skinUnlockStack.target
+    });
+
+    fireConfetti(skin);
+    skinUnlockStack.skinId = null;
+    skinUnlockStack.count = 0;
+    return;
+  }
+
+  renderSkinList();
+  renderReceiveSkinList();
+
+  openQuizResultScreen({
+    isCorrect: true,
+    isUnlock: false,
+    skin: skin,
+    amount: '50.000đ',
+    stackCount: skinUnlockStack.count,
+    stackTarget: skinUnlockStack.target
+  });
+}
+
 function handleSeeAllClick() {
   if (window.hj) {
     hj('event', 'tap_see_all');
   }
 
-  openRandomSkinQuiz();
+  claimRandomSkinFromPayment();
 }
 
 function getRandomLockedQuizSkinId() {
@@ -1898,6 +3185,7 @@ function answerQuiz(optionIdx) {
   }
 
   renderSkinList();
+  renderReceiveSkinList();
 
   openQuizResultScreen({
     isCorrect: isCorrect,
@@ -1914,7 +3202,7 @@ function updateXuBadge() {
     return;
   }
 
-  el.textContent = 'Đổi ' + formatXu(xuBalance);
+  el.textContent = 'Redeem ' + formatXu(xuBalance);
 }
 
 function openSkinConfirmSheet(skinId) {
@@ -1983,6 +3271,7 @@ function confirmRedeemSkin() {
   unlockSkin(skinId);
   updateXuBadge();
   renderSkinList();
+  renderReceiveSkinList();
   closeSkinConfirmSheet();
   showSkinToast('✨ Đã mở khóa skin: ' + skin.name);
 }
@@ -2021,6 +3310,14 @@ window.addEventListener('load', function() {
   if (typeof renderSkinList === 'function') {
     renderSkinList();
   }
+
+  if (typeof renderReceiveSkinList === 'function') {
+    renderReceiveSkinList();
+  }
+
+  if (typeof switchBottomTab === 'function') {
+    switchBottomTab('my_qr');
+  }
 });
 </script>
 
@@ -2053,6 +3350,7 @@ const SKINS = [
     bannerBrand: 'VÍ MOMO',
     bannerTitle: 'Ví MoMo —\nTrả Sau dễ dàng!',
     bannerPromo: '💳 Hạn mức 30 triệu, duyệt trong 1 phút',
+    bannerBadge: '✨ Ưu đãi nổi bật',
     tagText: 'MoMo Default',
     cardBannerText: 'MoMo × Ví Trả Sau — Mua trước, trả sau',
     cardChip: '💳 Ví Trả Sau MoMo',
@@ -2082,6 +3380,7 @@ const SKINS = [
     bannerBrand: 'MOMO × STARBUCKS',
     bannerTitle: 'Buy 1 Get 1\nMoMo Tuesday!',
     bannerPromo: '☕ Mua 1 tặng 1 mỗi thứ Ba',
+    bannerBadge: '☕ Hot deal',
     tagText: 'Starbucks Collab',
     cardBannerText: 'Starbucks × MoMo — Buy 1 Get 1',
     cardChip: '☕ Free đồ uống',
@@ -2117,6 +3416,7 @@ const SKINS = [
     bannerBrand: 'MOMO × THỎ ƠI!!',
     bannerTitle: 'THỎ ƠI!!',
     bannerPromo: '🎬 Hoàn 50k vé — Mùng 1 Tết 2026',
+    bannerBadge: '🐰 Mới lên sóng',
     tagText: 'Thỏ Ơi Film',
     cardBannerText: 'Thỏ Ơi!! × MoMo — Phim Trấn Thành Tết 2026',
     cardChip: '🎬 Hoàn 50k tiền vé',
@@ -2152,6 +3452,7 @@ const SKINS = [
     bannerBrand: 'MOMO × DUNE: PART TWO',
     bannerTitle: 'The spice\nmust flow.',
     bannerPromo: '🏜️ Vé IMAX giảm 80k — thanh toán MoMo',
+    bannerBadge: '🏜️ Limited',
     tagText: 'Dune Collab',
     cardBannerText: 'Dune × MoMo — IMAX Experience',
     cardChip: '🏜️ Giảm 80k vé IMAX',
@@ -2187,6 +3488,7 @@ const SKINS = [
     bannerBrand: 'MOMO × CIRCLE K × LIFEBUOY',
     bannerTitle: 'Sạch tay —\nAn toàn mọi lúc!',
     bannerPromo: '🧴 Tặng Lifebuoy khi mua tại Circle K',
+    bannerBadge: '🧼 Vừa mở khóa',
     tagText: 'Circle K Collab',
     cardBannerText: 'Circle K × Lifebuoy × MoMo — Mua sắm an toàn',
     cardChip: '🛡️ Quà Lifebuoy miễn phí',
@@ -2222,6 +3524,7 @@ const SKINS = [
     bannerBrand: 'MOMO × MINISTOP × LABUBU',
     bannerTitle: 'Săn Labubu\ntại MiniStop!',
     bannerPromo: '🧸 Blind box độc quyền khi TT MoMo',
+    bannerBadge: '🧸 Trend pick',
     tagText: 'Labubu Collab',
     cardBannerText: 'MiniStop × Labubu × MoMo — Blind Box độc quyền',
     cardChip: '🧸 Blind box Labubu',
@@ -2239,6 +3542,13 @@ const SKINS = [
 ];
 
 let currentSkinIdx = 0;
+let skinUnlockStack = {
+  count: 0,
+  target: 3,
+  skinId: null
+};
+let currentBottomTab = 'my_qr';
+let hasNewReceiveSkinBadge = false;
 let tapT = null;
 let promoOn = true;
 var selIdx = 0;
@@ -2348,6 +3658,24 @@ function selectSkin(idx) {
   showSkinToast('🎨 Đã chọn skin: ' + SKINS[idx].name);
 }
 
+
+function getSkinBannerBadge(skin) {
+  if (skin && skin.bannerBadge) {
+    return skin.bannerBadge;
+  }
+
+  var badgeBySkinId = {
+    momo_default: '✨ Ưu đãi nổi bật',
+    starbucks: '☕ Hot deal',
+    tho_oi: '🐰 Mới lên sóng',
+    dune: '🏜️ Limited',
+    circlek_lifebuoy: '🧼 Vừa mở khóa',
+    ministop_labubu: '🧸 Trend pick'
+  };
+
+  return badgeBySkinId[skin.id] || '✨ Featured';
+}
+
 function applySkin(idx) {
   var skin = SKINS[idx];
   var root = document.getElementById('phone');
@@ -2386,11 +3714,8 @@ root.style.setProperty('--skin-entry-border', skin.entryBorder || 'rgba(0,0,0,0.
     : `<span class="ip-skin-image-slot-label">IMG SLOT</span>`}
 </div>
       <div class="ip-skin-text">
+        <div class="ip-skin-badge">${getSkinBannerBadge(skin)}</div>
         <div class="ip-skin-title">${skin.bannerTitle.replace('\n', '<br>')}</div>
-        <div class="ip-skin-promo">
-          <div class="ip-skin-promo-dot"></div>
-          <span>${skin.bannerPromo}</span>
-        </div>
       </div>
     </div>
   `;
@@ -2409,6 +3734,18 @@ root.style.setProperty('--skin-entry-border', skin.entryBorder || 'rgba(0,0,0,0.
   if (sheetSub) {
     sheetSub.textContent = skin.sheetSub;
   }
+
+  var receiveHero = document.getElementById('receiveHero');
+  if (receiveHero) {
+    receiveHero.style.setProperty('--receive-hero-bg', skin.receiveHeroBg || skin.cardBg || '#F6DFEA');
+  }
+
+  var receiveCurrentSkinName = document.getElementById('receiveCurrentSkinName');
+  if (receiveCurrentSkinName) {
+    receiveCurrentSkinName.textContent = skin.name;
+  }
+
+  renderReceiveSkinList();
 }
 
 function nextSkin() {
@@ -2525,6 +3862,7 @@ function closeSheet() {
 
 applySkin(0);
 renderSkinList();
+renderReceiveTabBadge();
 
 setTimeout(function() {
   showSkinToast('👆 Bấm Refresh để chọn skin');
@@ -2578,8 +3916,14 @@ function openQuizResultScreen(config) {
   var titleEl = document.getElementById('quizResultTitle');
   var amountEl = document.getElementById('quizResultAmount');
   var paymentStatusEl = document.getElementById('quizPaymentStatus');
+  var skinStatusCardEl = document.getElementById('quizSkinStatusCard');
   var skinStatusTitleEl = document.getElementById('quizSkinStatusTitle');
   var skinStatusDescEl = document.getElementById('quizSkinStatusDesc');
+  var stackCardEl = document.getElementById('stackProgressCard');
+  var stackTitleEl = document.getElementById('stackProgressTitle');
+  var stackDescEl = document.getElementById('stackProgressDesc');
+  var stackFillEl = document.getElementById('stackProgressFill');
+  var markerWrapEl = document.getElementById('stackProgressMarkers');
   var btnEl = document.getElementById('quizResultCloseBtn');
 
   if (
@@ -2588,33 +3932,117 @@ function openQuizResultScreen(config) {
     !titleEl ||
     !amountEl ||
     !paymentStatusEl ||
+    !skinStatusCardEl ||
     !skinStatusTitleEl ||
-    !skinStatusDescEl ||
+    !stackCardEl ||
+    !stackTitleEl ||
+    !stackDescEl ||
+    !stackFillEl ||
+    !markerWrapEl ||
     !btnEl
   ) {
     return;
   }
 
   var isCorrect = Boolean(config && config.isCorrect);
+  var isUnlock = Boolean(config && config.isUnlock);
   var skin = config && config.skin ? config.skin : null;
   var amount = config && config.amount ? config.amount : '50.000đ';
-  var skinMessage = buildQuizResultMessage(isCorrect, skin);
+  var stackCount = config && typeof config.stackCount === 'number' ? config.stackCount : 0;
+  var stackTarget = config && typeof config.stackTarget === 'number' ? config.stackTarget : 3;
+  var safeTarget = stackTarget > 0 ? stackTarget : 3;
+  var progressPercent = Math.max(0, Math.min(100, Math.round((stackCount / safeTarget) * 100)));
+  var markerHtml = '';
+  var i = 0;
+  var mergedTitle = '';
 
   screen.classList.remove('skin-success', 'skin-fail');
   screen.classList.add(isCorrect ? 'skin-success' : 'skin-fail');
 
   panel.style.setProperty('--skin-primary', skin && skin.primary ? skin.primary : '#A60064');
+  panel.style.setProperty('--skin-accent', skin && skin.accent ? skin.accent : '#EB2F96');
   btnEl.style.background = skin && skin.primary ? skin.primary : '#A60064';
 
-  titleEl.textContent = 'Thanh toán thành công';
+  titleEl.textContent = isUnlock ? 'Mở khóa skin thành công' : 'Thanh toán thành công';
   amountEl.textContent = amount;
-  amountEl.style.color = '#22C55E';
-  paymentStatusEl.textContent = 'Giao dịch đã hoàn tất thành công';
+  amountEl.style.color = isUnlock ? (skin && skin.primary ? skin.primary : '#A60064') : '#22C55E';
+  paymentStatusEl.textContent = isUnlock
+    ? 'Bạn đã hoàn tất lần thanh toán thứ ' + safeTarget + ' liên tiếp'
+    : 'Giao dịch đã hoàn tất thành công';
 
-  skinStatusTitleEl.textContent = skinMessage.title;
-  skinStatusDescEl.textContent = skinMessage.desc;
+  skinStatusTitleEl.textContent = isUnlock
+    ? 'Skin "' + (skin ? skin.name : 'mới') + '" đã được mở khóa'
+    : 'Đã cộng thêm 1 lượt tích lũy mở skin';
+
+  if (skinStatusDescEl) {
+    skinStatusDescEl.style.display = 'none';
+    skinStatusDescEl.textContent = '';
+  }
+
+  stackCardEl.classList.toggle('is-unlock', isUnlock);
+  mergedTitle = stackCount + '/' + safeTarget + ' • ' + (skin ? skin.name : 'Skin bí ẩn');
+  stackTitleEl.textContent = mergedTitle;
+
+  if (isUnlock) {
+    stackDescEl.textContent = 'Đã đủ mốc mở khóa. Skin mới được áp dụng ngay sau giao dịch này.';
+  } else {
+    stackDescEl.textContent = 'Bạn còn ' + Math.max(safeTarget - stackCount, 0) + ' lần thanh toán liên tiếp nữa để mở khóa.';
+  }
+
+  markerWrapEl.innerHTML = '';
+
+  for (i = 1; i <= safeTarget; i += 1) {
+    markerHtml += '<div class="stack-progress-marker'
+      + (i < stackCount || (isUnlock && i <= stackCount) ? ' done' : '')
+      + (i === stackCount && !isUnlock ? ' active' : '')
+      + (isUnlock && i === safeTarget ? ' active' : '')
+      + '">' + i + '</div>';
+  }
+
+  markerWrapEl.innerHTML = markerHtml;
+  stackFillEl.style.width = '0%';
+
+  requestAnimationFrame(function() {
+    stackFillEl.style.width = progressPercent + '%';
+  });
 
   screen.classList.add('show');
+}
+
+function fireConfetti(skin) {
+  var layer = document.createElement('div');
+  var colors = [
+    skin && skin.primary ? skin.primary : '#A60064',
+    skin && skin.accent ? skin.accent : '#EB2F96',
+    '#F59E0B',
+    '#22C55E',
+    '#60A5FA',
+    '#FFFFFF'
+  ];
+  var i = 0;
+
+  layer.className = 'confetti-layer';
+  document.body.appendChild(layer);
+
+  for (i = 0; i < 72; i += 1) {
+    var piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.background = colors[i % colors.length];
+    piece.style.opacity = String(0.7 + Math.random() * 0.3);
+    piece.style.animationDuration = (1.8 + Math.random() * 1.2) + 's';
+    piece.style.animationDelay = (Math.random() * 0.18) + 's';
+    piece.style.setProperty('--confetti-x', ((Math.random() * 220) - 110) + 'px');
+    piece.style.setProperty('--confetti-rotate', ((Math.random() * 1080) - 540) + 'deg');
+    piece.style.transform = 'rotate(' + ((Math.random() * 360) - 180) + 'deg)';
+    layer.appendChild(piece);
+  }
+
+  window.setTimeout(function() {
+    if (layer && layer.parentNode) {
+      layer.parentNode.removeChild(layer);
+    }
+  }, 3400);
 }
 
 function closeQuizResultScreen() {
